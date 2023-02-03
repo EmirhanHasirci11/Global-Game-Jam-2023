@@ -6,9 +6,13 @@ using UnityEngine.Events;
 public class AnimationHelper : MonoBehaviour
 {
     // Start is called before the first frame update
-    public UnityEvent OnAnimationEventTriggered;
+    public UnityEvent OnAnimationEventTriggered, OnAttackPerformed;
     public void TriggerEvent()
     {
         OnAnimationEventTriggered?.Invoke();
+    }
+    public void TriggerAttack()
+    {
+        OnAttackPerformed?.Invoke();
     }
 }
