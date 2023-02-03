@@ -9,8 +9,9 @@ public class Enemy : MonoBehaviour
     public float damage;
     public float speed;
     public float PlayerCheckRadius;
+    public float MinDistanceFromPlayer;
 
-    private Transform target;
+    [HideInInspector] public Transform target;
     private Rigidbody2D rb;
 
     private Vector3 startPos;
@@ -20,13 +21,27 @@ public class Enemy : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         startPos = transform.position;
     }
+
+    public void GetDamage(float damage)
+    {
+        health -= damage;
+        //Add Animation or particles
+    }
     public void Move()
     {
         CheckForPlayer();
         if(target != null)
         {
             //Add animation
-            rb.velocity = (target.position - transform.position).normalized * speed;
+            if((transform.position - target.position).magnitude > MinDistanceFromPlayer)
+            {
+                rb.velocity = (target.position - transform.position).normalized * speed;
+            }
+            else
+            {
+                rb.velocity = Vector3.zero;
+            }
+
         }
         else
         {
