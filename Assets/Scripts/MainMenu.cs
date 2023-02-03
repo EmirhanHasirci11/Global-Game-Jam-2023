@@ -12,12 +12,8 @@ public class MainMenu : MonoBehaviour
     public GameObject menubuttons;
     public GameObject backbutton;
     public GameObject credits;
-    public AudioSource clickaudio;
-    public AudioClip[] clips;
     public Slider soundoption;
     public Slider musicoption;
-    public AudioSource[] audiosources;
-    public AudioSource musicsource;
     public Image Dark;
     public void Play()
     {
@@ -48,11 +44,6 @@ public class MainMenu : MonoBehaviour
         credits.SetActive(false);
         optionsmenu.SetActive(false);
              
-    }
-    public void Click()
-    {
-        clickaudio.pitch = Random.Range(1f, 1.3f);
-        clickaudio.PlayOneShot(clips[Random.Range(0, 3)]);
     }
     public void Options()
     {

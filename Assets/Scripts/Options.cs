@@ -10,7 +10,7 @@ public class Options : MonoBehaviour
     public Slider soundbar;
     public Slider musicbar;
     public string JSON;
-    public Sounds s;
+    public SoundManager s;
 
     private void Start()
     {

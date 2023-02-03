@@ -9,34 +9,10 @@ public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
 
-    //public Options o;
-    //public Pause p;
-    public AudioSource[] audiosources;
+    public Options o;
+    public Pause p;
     public float musicmultiplier;
 
-    private void Update()
-    {
-        if (Input.GetKey("f") && Input.GetKey("1"))
-        {
-            SceneManager.LoadScene("Fight1");
-        }
-        else if (Input.GetKey("f") && Input.GetKey("2"))
-        {
-            SceneManager.LoadScene("Fight2");
-        }
-        else if (Input.GetKey("f") && Input.GetKey("3"))
-        {
-            SceneManager.LoadScene("Fight3");
-        }
-        else if (Input.GetKey("f") && Input.GetKey("4"))
-        {
-            SceneManager.LoadScene("Fight4");
-        }
-        else if (Input.GetKey("f") && Input.GetKey("5"))
-        {
-            SceneManager.LoadScene("Fight5");
-        }
-    }
     private void Awake()
     {
         for (int i = 0; i < sounds.Length; i++)
@@ -68,11 +44,11 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    /*public void SetVolume()
+    public void SetVolume()
     {
         for (int i = 0; i < sounds.Length; i++)
         {
-            if (sounds[i].name == "Music1")
+            if (sounds[i].isMusic)
             {
                 if (p != null)
                 {
@@ -89,6 +65,6 @@ public class SoundManager : MonoBehaviour
             }
 
         }
-    }*/
+    }
 
 }
