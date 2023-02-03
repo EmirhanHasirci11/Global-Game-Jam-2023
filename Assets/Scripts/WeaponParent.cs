@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,15 @@ public class WeaponParent : MonoBehaviour
     public GameObject playerObject;
     private Vector3 defaultLocalScale;
     public Vector2 PointerPosition { get; set; }
+    public Animator animator;
+    public float delay = 0.1f;
+    public bool attackBlocked;
+    public bool IsAttacking { get; private set; }
 
+    public void ResetIsAttacking() 
+    {
+        IsAttacking = false;
+     }
     private void Awake()
     {
         characterRenderer = playerObject.GetComponent<SpriteRenderer>();
@@ -19,6 +28,8 @@ public class WeaponParent : MonoBehaviour
 
     private void Update()
     {
+        if (IsAttacking)
+            return;
         Vector2 direction = (PointerPosition - (Vector2)transform.position).normalized;
         transform.right = direction;
         Vector2 scale = transform.localScale;
@@ -48,5 +59,19 @@ public class WeaponParent : MonoBehaviour
             weaponRenderer.sortingOrder = characterRenderer.sortingOrder + 1;
         }
     }
+    public void Attack()
+    {
+        if (attackBlocked)
+            return;
+        animator.SetTrigger("Attack");
+        IsAttacking = true;
+        attackBlocked = true;
+        StartCoroutine(DelayAttack());
+    }
 
+    private IEnumerator DelayAttack()
+    {
+        yield return new WaitForSeconds(delay);
+        attackBlocked = false;
+    }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,14 +18,19 @@ public class Player : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>();
         weaponParent = GetComponentInChildren<WeaponParent>();
-
     }
-
-    void Start()
+    private void OnEnable()
     {
-
+        attack.action.performed += PerformAttack;
     }
-
+    private void OnDisable()
+    {
+        attack.action.performed -=PerformAttack;
+    }
+    private void PerformAttack(InputAction.CallbackContext obj)
+    {
+        weaponParent.Attack();
+    }
 
     void Update()
     {
