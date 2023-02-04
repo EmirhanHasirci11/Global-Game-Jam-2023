@@ -1418,6 +1418,10 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1533975948794841787, guid: e982ac759026c04468da1156bff15de6, type: 3}
+      propertyPath: spin
+      value: 
+      objectReference: {fileID: -5688697478299761995, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
     - target: {fileID: 1533975948794841790, guid: e982ac759026c04468da1156bff15de6, type: 3}
       propertyPath: m_RootOrder
       value: 6
