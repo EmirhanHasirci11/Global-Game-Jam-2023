@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 4913287496494452671}
   - component: {fileID: 4905224596537409093}
   m_Layer: 7
-  m_Name: EnemyGuts 1
+  m_Name: EnemyGut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
