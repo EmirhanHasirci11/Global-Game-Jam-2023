@@ -637,7 +637,9 @@ MonoBehaviour:
   MinDistanceFromPlayer: 2
   target: {fileID: 0}
   rb: {fileID: 863863538}
-  AttackTimer: 0
+  startPos: {x: 0, y: 0, z: 0}
+  AttackTimer: 2
+  MaxDistanceFromPlayer: 4
 --- !u!212 &863863540
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -774,6 +776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponRenderer: {fileID: 2085357026}
   playerObject: {fileID: 863863536}
+  MainHero: {fileID: 0}
   animator: {fileID: 2085357025}
   circleOrigin: {fileID: 575594905}
   playerLocation: {fileID: 0}
@@ -890,6 +893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponRenderer: {fileID: 835970096}
   playerObject: {fileID: 1836577775}
+  MainHero: {fileID: 0}
   animator: {fileID: 835970095}
   circleOrigin: {fileID: 318002225}
   playerLocation: {fileID: 0}
@@ -952,7 +956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1dae41b425f644e8b92418fb723d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 4
+  maxSpeed: 8
   acceleration: 50
   deacceleration: 100
   currentSpeed: 0

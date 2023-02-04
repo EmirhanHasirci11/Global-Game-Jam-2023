@@ -12,10 +12,9 @@ public class Enemy : MonoBehaviour
     public float MinDistanceFromPlayer;
 
     [HideInInspector] public Transform target;
-    [SerializeField]
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
-    private Vector3 startPos;
+    public Vector3 startPos;
 
     private void Awake()
     {
@@ -50,6 +49,7 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+
 
     //Checks for player in sphere with given radius.
     public void CheckForPlayer()
