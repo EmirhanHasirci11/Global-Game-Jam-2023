@@ -5,11 +5,16 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField]
-    private float currentHealth, maxHealth;
+    HealthBar healthbar;
+    public float currentHealth, maxHealth;
     public UnityEvent<GameObject> OnHitWithRefference, OnDeathWithRefference;
     [SerializeField]
     public bool isDead = false;
+
+    private void Start()
+    {
+        healthbar = gameObject.GetComponent<HealthBar>();
+    }
     public void InitializeHealth(float healthValue)
     {
         currentHealth = healthValue;
@@ -23,6 +28,10 @@ public class Health : MonoBehaviour
         if (sender.layer == gameObject.layer)
             return;
 
+        if (healthbar != null)
+        {
+            healthbar.Damage(currentHealth, amount, maxHealth);
+        }
         currentHealth -= amount;
 
         if (currentHealth > 0)
