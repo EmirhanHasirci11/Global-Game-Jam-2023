@@ -17,12 +17,9 @@ public class EnemySamurai : Enemy
     private float distanceBeforeHit;
     private bool movingBack;
 
-    private void Awake()
-    {
-        weaponParent = GetComponentInChildren<WeaponParent>();
-    }
     private void Start()
     {
+        weaponParent = GetComponentInChildren<WeaponParent>();
         currentAttackTimer = AttackTimer;
         distanceBeforeHit = MinDistanceFromPlayer;
     }

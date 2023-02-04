@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Vector3 offset;
     private Transform target;
-    private Health targetHealth;
+
+    private float leftEdge;
+    private float rightEdge;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        targetHealth = target.gameObject.GetComponent<Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(target.position.x > rightEdge)
+        {
 
-        if (!targetHealth.isDead)
-            Follow(target);
+        }
+        else if(target.position.x < leftEdge)
+        {
+
+        }
     }
 
-    private void Follow(Transform target)
+    private void GoNextMap(Vector3 newPos)
     {
-        transform.position = target.position + offset;
+        transform.position += newPos;
     }
 }
