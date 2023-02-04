@@ -229,7 +229,7 @@ MonoBehaviour:
   playerLocation: {fileID: 0}
   radius: 1.64
   delay: 0.3
-  damage: 0
+  damage: 30
   attackBlocked: 0
   isEnemy: 0
 --- !u!114 &3753046848950276381
