@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
-    public float health;
+    [Header("Base Class Attributes")]
     public float damage;
     public float speed;
     public float PlayerCheckRadius;
@@ -18,7 +17,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        
+        Debug.Log("enemy");
         startPos = transform.position;
     }
     public void Move()

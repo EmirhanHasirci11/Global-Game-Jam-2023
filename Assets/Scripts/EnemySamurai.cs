@@ -10,6 +10,11 @@ public class EnemySamurai : Enemy
     private WeaponParent weaponParent;
     private float currentAttackTimer;
     private bool movingBack;
+
+    private void Awake()
+    {
+        weaponParent = GetComponentInChildren<WeaponParent>();
+    }
     private void Start()
     {
         currentAttackTimer = AttackTimer;
@@ -66,11 +71,7 @@ public class EnemySamurai : Enemy
             weaponParent.Attack();
         }
     }
-    private void Awake()
-    {
-       
-        weaponParent = GetComponentInChildren<WeaponParent>();
-    }
+    
     
    
 }
