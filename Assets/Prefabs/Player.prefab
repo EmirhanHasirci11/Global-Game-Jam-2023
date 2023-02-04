@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1dae41b425f644e8b92418fb723d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 4
   acceleration: 50
   deacceleration: 100
   currentSpeed: 0
@@ -301,11 +301,7 @@ MonoBehaviour:
   playerLocation: {fileID: 0}
   radius: 1.1
   delay: 0.3
-<<<<<<< Updated upstream
   damage: 20
-=======
-  damage: 2
->>>>>>> Stashed changes
   attackBlocked: 0
   isEnemy: 0
 --- !u!1 &1533975949051428673

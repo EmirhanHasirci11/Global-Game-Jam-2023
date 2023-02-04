@@ -2162,8 +2162,6 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   AttackTimer: 2
   MaxDistanceFromPlayer: 4
-  movingBackTimer: 0
-  distanceAfterHit: 0
 --- !u!212 &981449588
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4820,8 +4818,6 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   AttackTimer: 2
   MaxDistanceFromPlayer: 4
-  movingBackTimer: 0
-  distanceAfterHit: 0
 --- !u!212 &2023390503
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4948,10 +4944,6 @@ PrefabInstance:
     - target: {fileID: 1533975948794841790, guid: e982ac759026c04468da1156bff15de6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1533975948982144484, guid: e982ac759026c04468da1156bff15de6, type: 3}
-      propertyPath: delay
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e982ac759026c04468da1156bff15de6, type: 3}
