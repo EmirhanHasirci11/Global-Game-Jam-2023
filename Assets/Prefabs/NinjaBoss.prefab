@@ -101,11 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  speed: 3
+  speed: 5
   ShurikenPrefab: {fileID: 6155251159489967565, guid: e2884f774987ed14482e6be5f107b0cd, type: 3}
   AttackTimer: 3
   MapTopLeft: {fileID: 0}
   MapBotRight: {fileID: 0}
+  teleportTimer: 8
   TimeBetweenShuriken: 0.5
   TimeBetweenQuickAttack: 0.2
   QuickAttackCount: 15
@@ -124,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf16ea8baffb2f448a8bd9bcaaf13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 5
-  maxHealth: 5
+  currentHealth: 500
+  maxHealth: 500
   OnHitWithRefference:
     m_PersistentCalls:
       m_Calls: []
