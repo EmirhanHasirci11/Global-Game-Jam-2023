@@ -142,6 +142,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   AttackTimer: 2
   MaxDistanceFromPlayer: 4
+  movingBackTimer: 0
+  distanceAfterHit: 0
 --- !u!50 &8090765631562147650
 Rigidbody2D:
   serializedVersion: 4
@@ -201,8 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf16ea8baffb2f448a8bd9bcaaf13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 5
-  maxHealth: 5
+  currentHealth: 100
+  maxHealth: 100
   OnHitWithRefference:
     m_PersistentCalls:
       m_Calls:
@@ -314,12 +316,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponRenderer: {fileID: 8090765631691926333}
   playerObject: {fileID: 8090765631562147654}
-  MainHero: {fileID: 0}
   animator: {fileID: 8090765631691926332}
   circleOrigin: {fileID: 8090765631267222809}
   playerLocation: {fileID: 0}
   radius: 1.1
   delay: 0.3
+  damage: 20
   attackBlocked: 0
   isEnemy: 0
 --- !u!1 &8090765631691926321
