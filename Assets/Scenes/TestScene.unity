@@ -570,7 +570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &863863537
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -637,8 +637,10 @@ MonoBehaviour:
   target: {fileID: 0}
   rb: {fileID: 863863538}
   startPos: {x: 0, y: 0, z: 0}
-  AttackTimer: 2
+  AttackTimer: 3
   MaxDistanceFromPlayer: 4
+  movingBackTimer: 1
+  distanceAfterHit: 6
 --- !u!212 &863863540
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1546,7 +1548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5871730941194073437
 Transform:
   m_ObjectHideFlags: 0

@@ -8,8 +8,13 @@ public class EnemySamurai : Enemy
     [Header("Child Class Attributes")]
     public float AttackTimer;
     public float MaxDistanceFromPlayer;
+    public float movingBackTimer;
+    public float distanceAfterHit;
+    
     private WeaponParent weaponParent;
     private float currentAttackTimer;
+    private float currentMovingBackTimer;
+    private float distanceBeforeHit;
     private bool movingBack;
 
     private void Awake()
@@ -19,19 +24,27 @@ public class EnemySamurai : Enemy
     private void Start()
     {
         currentAttackTimer = AttackTimer;
+        distanceBeforeHit = MinDistanceFromPlayer;
     }
     private void Update()
     {
         currentAttackTimer -= Time.deltaTime;
+
         if(currentAttackTimer < 0)
         {
             movingBack = false;
             Attack();
         }
-        if (movingBack)
+        if (movingBack && currentMovingBackTimer > 0)
+        {
             MoveBack();
+            currentMovingBackTimer -= Time.deltaTime;
+        }
         else
+        {
             Move();
+            MinDistanceFromPlayer = distanceBeforeHit;
+        }
     }
     public void MoveBack()
     {
@@ -69,6 +82,8 @@ public class EnemySamurai : Enemy
         {
             currentAttackTimer = AttackTimer;
             movingBack = true;
+            currentMovingBackTimer = movingBackTimer;
+            MinDistanceFromPlayer = distanceAfterHit;
             weaponParent.Attack();
         }
     }

@@ -107,6 +107,10 @@ MonoBehaviour:
   MapTopLeft: {fileID: 0}
   MapBotRight: {fileID: 0}
   TimeBetweenShuriken: 0.5
+  TimeBetweenQuickAttack: 0.2
+  QuickAttackCount: 15
+  TimeBetweenRandomQuickAttack: 0.3
+  RandomQuickAttackCount: 30
   shurikenSP: []
 --- !u!114 &7551704584316021166
 MonoBehaviour:
