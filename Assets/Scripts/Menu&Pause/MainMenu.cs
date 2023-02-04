@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
         Dark.gameObject.SetActive(true);
         StartCoroutine(FadeIn(Dark,2));
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("CharacterSelect");
+        SceneManager.LoadScene("SampleScene");
     }
     public void Exit()
     {
