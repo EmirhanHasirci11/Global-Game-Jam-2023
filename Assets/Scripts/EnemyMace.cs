@@ -43,8 +43,8 @@ public class EnemyMace : Enemy
                 weaponParent.Attack();
                 yield return new WaitForSeconds(weaponParent.animator.GetCurrentAnimatorClipInfo(0).Length);
             }
-            
+            currentAttackTimer = AttackTimer;
         }
-        currentAttackTimer = AttackTimer;
+        
     }
 }
