@@ -106,7 +106,6 @@ MonoBehaviour:
   movement: {fileID: -1473495480385864407, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
   attack: {fileID: -743835554904785500, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
   pointerPosition: {fileID: 8467167919168663035, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
-  spin: {fileID: -5688697478299761995, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
 --- !u!50 &1533975948794841788
 Rigidbody2D:
   serializedVersion: 4
@@ -183,8 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf16ea8baffb2f448a8bd9bcaaf13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 100
-  maxHealth: 100
+  currentHealth: 5
+  maxHealth: 5
   OnHitWithRefference:
     m_PersistentCalls:
       m_Calls:
@@ -296,16 +295,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponRenderer: {fileID: 1533975949277695111}
   playerObject: {fileID: 1533975948794841776}
+  MainHero: {fileID: 0}
   animator: {fileID: 1533975949277695110}
   circleOrigin: {fileID: 1533975949051428672}
   playerLocation: {fileID: 0}
   radius: 1.1
   delay: 0.3
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   damage: 20
 =======
   damage: 2
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 658e29e (enemy player settings)
   attackBlocked: 0
   isEnemy: 0
 --- !u!1 &1533975949051428673
