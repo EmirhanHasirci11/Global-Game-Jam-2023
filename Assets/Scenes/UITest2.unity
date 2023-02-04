@@ -552,6 +552,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 17270278300128040, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 17270278300128046, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 17270278300128046, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 17270278385286624, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 17270278385286627, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -599,6 +615,14 @@ PrefabInstance:
     - target: {fileID: 17270278385286628, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
       propertyPath: m_Name
       value: EnemyGuts
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542705487675882243, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542705487675882243, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
