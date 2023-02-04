@@ -21,7 +21,7 @@ public class Pause : MonoBehaviour
                 options.s.SetVolume();
                 for (int i = 0; i < options.s.sounds.Length; i++)
                 {
-                    if (options.s.sounds[i].name == "Music1")
+                    if (options.s.sounds[i].isMusic)
                     {
                         options.s.sounds[i].source.Pause();
                     }
@@ -42,7 +42,7 @@ public class Pause : MonoBehaviour
         pausescreen.SetActive(false);
         for (int i = 0; i < options.s.sounds.Length; i++)
         {
-            if (options.s.sounds[i].name == "Music1")
+            if (options.s.sounds[i].isMusic)
             {
                 options.s.sounds[i].source.Play();
             }
