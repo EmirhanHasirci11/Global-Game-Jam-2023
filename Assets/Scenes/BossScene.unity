@@ -903,20 +903,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1139243679}
     - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
-      propertyPath: teleportTimer
+      propertyPath: quickAttackTimer
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
+      propertyPath: MinDistancePhase1
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
-      propertyPath: QuickAttackCount
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
-      propertyPath: TimeBetweenShuriken
-      value: 0.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
-      propertyPath: TimeBetweenQuickAttack
-      value: 0.33
+      propertyPath: randomQuickAttackTimer
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7227210065834607047, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
       propertyPath: m_RootOrder
@@ -961,10 +957,6 @@ PrefabInstance:
     - target: {fileID: 7227210065834607047, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7551704584316021166, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
-      propertyPath: currentHealth
-      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}

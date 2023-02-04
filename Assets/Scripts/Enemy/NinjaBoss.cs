@@ -12,15 +12,18 @@ public class NinjaBoss : MonoBehaviour
     public Transform MapTopLeft;
     public Transform MapBotRight;
     public float teleportTimer;
+    public float MinDistancePhase1;
 
     [Header("Normal Attack")]
     public float TimeBetweenShuriken;
 
     [Header("Quick Attack")]
+    public float quickAttackTimer;
     public float TimeBetweenQuickAttack;
     public int QuickAttackCount;
 
     [Header("Random Quick Attack")]
+    public float randomQuickAttackTimer;
     public float TimeBetweenRandomQuickAttack;
     public int RandomQuickAttackCount;
 
@@ -38,6 +41,7 @@ public class NinjaBoss : MonoBehaviour
     private Vector3 moveDir;
     private bool canMove;
     private bool isAttacking;
+    private int phase = 0;
 
     private void Awake()
     {
@@ -54,21 +58,28 @@ public class NinjaBoss : MonoBehaviour
         currentAttackTimer -= Time.deltaTime;
         currentTeleportTimer -= Time.deltaTime;
 
+        if (health.currentHealth > health.maxHealth * 70 / 100)
+            phase = 0;
+        else if (health.currentHealth <= health.maxHealth * 70 / 100 && health.currentHealth >= health.maxHealth * 40 / 100)
+            phase = 1;
+        else
+            phase = 2;
+
         if(currentAttackTimer < 0)
         {
             currentAttackTimer = 100;
-            if(health.currentHealth > health.maxHealth * 70/100)
+            if(phase == 0)
             {
                 StartCoroutine(NormalAttack());
             }
-            else if(health.currentHealth <= health.maxHealth * 70 / 100 && health.currentHealth >= health.maxHealth * 40 / 100)
+            else if(phase == 1)
             {
-                AttackTimer = AttackTimer * 3 / 4;
+                AttackTimer = quickAttackTimer;
                 StartCoroutine(QuickAttack());
             }
-            else
+            else if(phase == 2)
             {
-                AttackTimer = AttackTimer * 3 / 4;
+                AttackTimer = randomQuickAttackTimer;
                 StartCoroutine(RandomQuickAttack());
             }
         }
@@ -81,11 +92,26 @@ public class NinjaBoss : MonoBehaviour
                 StartCoroutine(Teleport());
             }
             if(canMove)
-                Move();
+            {
+                if(phase == 0)
+                    Move();
+                else if(phase == 1)
+                {
+                    if((transform.position - target.position).magnitude > MinDistancePhase1)
+                    {
+                        moveDir = target.position;
+                        Move();
+                    }
+                    else
+                    {
+                        moveDir = chooseDir();
+                    }
+                }
+            }
         }
 
     }
-
+    
     public void Move()
     {
         if((transform.position - moveDir).magnitude > 0.1)
