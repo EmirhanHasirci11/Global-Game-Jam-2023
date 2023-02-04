@@ -4541,13 +4541,9 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1533975948794841786, guid: e982ac759026c04468da1156bff15de6, type: 3}
-      propertyPath: maxSpeed
-      value: 8
+      propertyPath: dashPower
+      value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 1533975948794841787, guid: e982ac759026c04468da1156bff15de6, type: 3}
-      propertyPath: spin
-      value: 
-      objectReference: {fileID: -5688697478299761995, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
     - target: {fileID: 1533975948794841790, guid: e982ac759026c04468da1156bff15de6, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -4591,10 +4587,6 @@ PrefabInstance:
     - target: {fileID: 1533975948794841790, guid: e982ac759026c04468da1156bff15de6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2755708109643261819, guid: e982ac759026c04468da1156bff15de6, type: 3}
-      propertyPath: m_Intensity
-      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 4135684140190586767, guid: e982ac759026c04468da1156bff15de6, type: 3}
       propertyPath: redhealth

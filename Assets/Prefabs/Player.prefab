@@ -110,6 +110,7 @@ MonoBehaviour:
   pointerPosition: {fileID: 8467167919168663035, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
   spin: {fileID: -5688697478299761995, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
   dash: {fileID: -6003059062958949704, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
+  toCont: 1
 --- !u!50 &1533975948794841788
 Rigidbody2D:
   serializedVersion: 4
@@ -129,7 +130,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1533975948794841789
 BoxCollider2D:
@@ -169,14 +170,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1dae41b425f644e8b92418fb723d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 4
+  maxSpeed: 8
   acceleration: 50
   deacceleration: 100
-  currentSpeed: 0
+  player: {fileID: 0}
   MovementInput: {x: 0, y: 0}
   dashPower: 30
-  dashTime: 0.5
-  dashCoolDown: 2
+  dashTime: 0.1
+  dashCoolDown: 1
+  controlBool: 0
 --- !u!114 &1533975948794841785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,7 +556,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.45
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000

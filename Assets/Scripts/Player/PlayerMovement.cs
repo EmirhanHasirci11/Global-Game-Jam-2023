@@ -13,8 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private float currentSpeed = 0;
     private Vector2 oldMovementInput;
     public Vector2 MovementInput;
-    [SerializeField] private float dashPower ;
-    [SerializeField] private float dashTime ;
+    [SerializeField] private float dashPower;
+    [SerializeField] private float dashTime;
     [SerializeField] private float dashCoolDown;
     public bool controlBool;
     private bool isDashing;
@@ -26,8 +26,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (isDashing)
-            return;
+
         if (MovementInput.magnitude > 0 && currentSpeed >= 0)
         {
             oldMovementInput = MovementInput;
@@ -37,8 +36,12 @@ public class PlayerMovement : MonoBehaviour
         {
             currentSpeed -= deacceleration * maxSpeed * Time.deltaTime;
         }
-        currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
-        rigidbody.velocity = oldMovementInput * currentSpeed;
+
+        if(!isDashing)
+        {
+            currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
+            rigidbody.velocity = oldMovementInput * currentSpeed;
+        }
         if (canDash && controlBool) { StartCoroutine(performDash()); }
     }
     public void changeBool()
@@ -53,16 +56,21 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         controlBool = false;
         isDashing = true;
+        Physics2D.IgnoreLayerCollision(6, 7, true);
+        Physics2D.IgnoreLayerCollision(6, 9, true);
+
         Debug.Log(new Vector2(oldMovementInput.x * dashPower, oldMovementInput.y * dashPower));
         rigidbody.velocity = new Vector2(oldMovementInput.x * dashPower, oldMovementInput.y * dashPower);
         Debug.Log(dashTime);
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
         Debug.Log(dashCoolDown);
+        Physics2D.IgnoreLayerCollision(6, 7, false);
+        Physics2D.IgnoreLayerCollision(6, 9, false);
+
         yield return new WaitForSeconds(dashCoolDown);
         player.toCont = true;
         canDash = true;
-        yield return new WaitForSecondsRealtime(1);
 
     }
 
