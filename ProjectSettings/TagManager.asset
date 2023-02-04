@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Sword
+  - Wall
+  - Shuriken
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - 
-  - 
+  - Wall
+  - EnemyWeapons
   - 
   - 
   - 

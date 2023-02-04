@@ -18,6 +18,7 @@ public class WeaponParent : MonoBehaviour
     public Transform playerLocation;
     public float radius;
     public float delay = 0.1f;
+    public float damage;
     public bool attackBlocked;
     public bool isEnemy;
     public bool IsAttacking { get; private set; }
@@ -119,7 +120,7 @@ public class WeaponParent : MonoBehaviour
             Health health;
             if (health = item.GetComponent<Health>())
             {
-                health.GetHit(1, transform.parent.gameObject);
+                health.GetHit(damage, transform.parent.gameObject);
             }
         }
     }

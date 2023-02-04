@@ -6,17 +6,17 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     [SerializeField]
-    private int currentHealth, maxHealth;
+    private float currentHealth, maxHealth;
     public UnityEvent<GameObject> OnHitWithRefference, OnDeathWithRefference;
     [SerializeField]
     public bool isDead = false;
-    public void InitializeHealth(int healthValue)
+    public void InitializeHealth(float healthValue)
     {
         currentHealth = healthValue;
         maxHealth = healthValue;
         isDead = false;
     }
-    public void GetHit(int amount, GameObject sender)
+    public void GetHit(float amount, GameObject sender)
     {
         if (isDead)
             return;
