@@ -12,28 +12,23 @@ public class Enemy : MonoBehaviour
     public float MinDistanceFromPlayer;
 
     [HideInInspector] public Transform target;
-    private Rigidbody2D rb;
+    [SerializeField]
+    Rigidbody2D rb;
 
     private Vector3 startPos;
 
     private void Awake()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        
         startPos = transform.position;
-    }
-
-    public void GetDamage(float damage)
-    {
-        health -= damage;
-        //Add Animation or particles
     }
     public void Move()
     {
         CheckForPlayer();
-        if(target != null)
+        if (target != null)
         {
             //Add animation
-            if((transform.position - target.position).magnitude > MinDistanceFromPlayer)
+            if ((transform.position - target.position).magnitude > MinDistanceFromPlayer)
             {
                 rb.velocity = (target.position - transform.position).normalized * speed;
             }
@@ -45,7 +40,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            if((transform.position - startPos).magnitude > 0.1)
+            if ((transform.position - startPos).magnitude > 0.1)
             {
                 rb.velocity = (startPos - transform.position).normalized * speed;
             }
@@ -61,7 +56,7 @@ public class Enemy : MonoBehaviour
     {
         foreach (Collider2D col in Physics2D.OverlapCircleAll(transform.position, PlayerCheckRadius))
         {
-            if(col.tag == "Player")
+            if (col.tag == "Player")
             {
                 target = col.transform;
                 return;

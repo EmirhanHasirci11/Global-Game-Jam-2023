@@ -9,30 +9,49 @@ public class WeaponParent : MonoBehaviour
     public SpriteRenderer weaponRenderer;
     private SpriteRenderer characterRenderer;
     public GameObject playerObject;
+    public GameObject MainHero;
     private Vector3 defaultLocalScale;
+    private Health MainHeroHealth;
     public Vector2 PointerPosition { get; set; }
     public Animator animator;
     public Transform circleOrigin;
+    public Transform playerLocation;
     public float radius;
     public float delay = 0.1f;
     public bool attackBlocked;
+    public bool isEnemy;
     public bool IsAttacking { get; private set; }
 
     public void ResetIsAttacking()
     {
         IsAttacking = false;
     }
-    private void Awake()
+    private void Start()
     {
         characterRenderer = playerObject.GetComponent<SpriteRenderer>();
         defaultLocalScale = playerObject.transform.localScale;
+        MainHero = GameObject.FindGameObjectWithTag("Player");
+        MainHeroHealth = MainHero.GetComponent<Health>();
+        //7 is for Enemy layer in inspector window
+        isEnemy = (playerObject.layer == 7) ? true : false;
     }
 
     private void Update()
     {
         if (IsAttacking)
             return;
-        Vector2 direction = (PointerPosition - (Vector2)transform.position).normalized;
+        Vector2 direction;
+        
+            playerLocation = !MainHeroHealth.isDead? MainHero.transform:null ;
+        if (isEnemy &&playerLocation!=null)
+        {
+            direction = ((Vector2)playerLocation.position - (Vector2)transform.position).normalized;
+
+        }
+        else
+        {
+            direction = (PointerPosition - (Vector2)transform.position).normalized;
+        }
         transform.right = direction;
         Vector2 scale = transform.localScale;
         if (direction.x < 0)
@@ -67,10 +86,24 @@ public class WeaponParent : MonoBehaviour
         attackBlocked = true;
         StartCoroutine(DelayAttack());
     }
+    public void Attack(int delayTime)
+    {
+        if (attackBlocked)
+            return;
+        animator.SetTrigger("Attack");
+        IsAttacking = true;
+        attackBlocked = true;
+        StartCoroutine(DelayAttack(delayTime));
+    }
 
     private IEnumerator DelayAttack()
     {
         yield return new WaitForSeconds(delay);
+        attackBlocked = false;
+    }
+    private IEnumerator DelayAttack(int delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
         attackBlocked = false;
     }
     private void OnDrawGizmosSelected()

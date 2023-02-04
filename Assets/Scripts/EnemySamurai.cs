@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class EnemySamurai : Enemy
 {
     public float AttackTimer;
-
+    private WeaponParent weaponParent;
     private float currentAttackTimer;
     private void Update()
     {
@@ -23,7 +24,14 @@ public class EnemySamurai : Enemy
 
         if((target.transform.position - transform.position).magnitude <= 2)
         {
-            
+            weaponParent.Attack();
         }
     }
+    private void Awake()
+    {
+       
+        weaponParent = GetComponentInChildren<WeaponParent>();
+    }
+    
+   
 }

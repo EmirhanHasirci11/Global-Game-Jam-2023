@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     private int currentHealth, maxHealth;
     public UnityEvent<GameObject> OnHitWithRefference, OnDeathWithRefference;
     [SerializeField]
-    private bool isDead = false;
+    public bool isDead = false;
     public void InitializeHealth(int healthValue)
     {
         currentHealth = healthValue;
