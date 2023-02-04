@@ -576,6 +576,7 @@ MonoBehaviour:
   playerLocation: {fileID: 0}
   radius: 1.1
   delay: 0.3
+  damage: 0
   attackBlocked: 0
   isEnemy: 0
 --- !u!1 &473558859
@@ -1414,7 +1415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 699555693}
-  strength: 16
+  strength: 1
   delay: 0.15
   OnBegin:
     m_PersistentCalls:
@@ -2014,7 +2015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &981449583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2312,6 +2313,7 @@ MonoBehaviour:
   playerLocation: {fileID: 0}
   radius: 1.1
   delay: 0.3
+  damage: 0
   attackBlocked: 0
   isEnemy: 0
 --- !u!1 &1097322834
@@ -4669,7 +4671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2023390498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4895,6 +4897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1533975948794841787, guid: e982ac759026c04468da1156bff15de6, type: 3}
+      propertyPath: spin
+      value: 
+      objectReference: {fileID: -5688697478299761995, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
     - target: {fileID: 1533975948794841790, guid: e982ac759026c04468da1156bff15de6, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4954,7 +4960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8090765631562147654, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8090765631562147661, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
       propertyPath: m_RootOrder
