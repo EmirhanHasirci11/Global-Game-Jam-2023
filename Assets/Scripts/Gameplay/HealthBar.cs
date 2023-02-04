@@ -9,6 +9,15 @@ public class HealthBar : MonoBehaviour
     [SerializeField] Image redhealth;
     [SerializeField] Animator healthanimator;
 
+    private void Start()
+    {
+        if (greenhealth==null)
+        {
+            healthanimator = gameObject.transform.Find("Canvas").transform.Find("PlayerHealthBackground").GetComponent<Animator>();
+            greenhealth = healthanimator.gameObject.transform.Find("Green").GetComponent<Image>();
+            redhealth = healthanimator.gameObject.transform.Find("RedHealth").GetComponent<Image>();
+        }
+    }
     public void Damage(float currenthealth, float damage, float maxhealth)
     {
         greenhealth.fillAmount = (currenthealth - damage) / maxhealth;
