@@ -26,18 +26,6 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (isDashing)
-        {
-            Physics2D.IgnoreLayerCollision(6, 7, true);
-            Physics2D.IgnoreLayerCollision(6, 9, true);
-            Debug.Log("Aynen");
-        }
-        else
-        {
-            Physics2D.IgnoreLayerCollision(6, 7, false);
-
-            Physics2D.IgnoreLayerCollision(6, 9, false);
-        }
 
         if (MovementInput.magnitude > 0 && currentSpeed >= 0)
         {
@@ -48,8 +36,12 @@ public class PlayerMovement : MonoBehaviour
         {
             currentSpeed -= deacceleration * maxSpeed * Time.deltaTime;
         }
-        currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
-        rigidbody.velocity = oldMovementInput * currentSpeed;
+
+        if(!isDashing)
+        {
+            currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
+            rigidbody.velocity = oldMovementInput * currentSpeed;
+        }
         if (canDash && controlBool) { StartCoroutine(performDash()); }
     }
     public void changeBool()
@@ -64,16 +56,21 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         controlBool = false;
         isDashing = true;
+        Physics2D.IgnoreLayerCollision(6, 7, true);
+        Physics2D.IgnoreLayerCollision(6, 9, true);
+
         Debug.Log(new Vector2(oldMovementInput.x * dashPower, oldMovementInput.y * dashPower));
         rigidbody.velocity = new Vector2(oldMovementInput.x * dashPower, oldMovementInput.y * dashPower);
         Debug.Log(dashTime);
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
         Debug.Log(dashCoolDown);
+        Physics2D.IgnoreLayerCollision(6, 7, false);
+        Physics2D.IgnoreLayerCollision(6, 9, false);
+
         yield return new WaitForSeconds(dashCoolDown);
         player.toCont = true;
         canDash = true;
-        yield return new WaitForSecondsRealtime(1);
 
     }
 
