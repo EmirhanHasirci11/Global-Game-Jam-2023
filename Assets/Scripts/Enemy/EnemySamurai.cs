@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class EnemySamurai : Enemy
 {
+    [Header("Child Class Attributes")]
     public float AttackTimer;
     public float MaxDistanceFromPlayer;
     private WeaponParent weaponParent;

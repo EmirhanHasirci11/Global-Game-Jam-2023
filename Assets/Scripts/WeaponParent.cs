@@ -86,7 +86,7 @@ public class WeaponParent : MonoBehaviour
         attackBlocked = true;
         StartCoroutine(DelayAttack());
     }
-    public void Attack(int delayTime)
+    public void Attack(float delayTime)
     {
         if (attackBlocked)
             return;
@@ -101,7 +101,7 @@ public class WeaponParent : MonoBehaviour
         yield return new WaitForSeconds(delay);
         attackBlocked = false;
     }
-    private IEnumerator DelayAttack(int delayTime)
+    private IEnumerator DelayAttack(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
         attackBlocked = false;
