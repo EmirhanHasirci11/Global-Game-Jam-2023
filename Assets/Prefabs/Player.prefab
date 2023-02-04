@@ -109,6 +109,7 @@ MonoBehaviour:
   attack: {fileID: -743835554904785500, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
   pointerPosition: {fileID: 8467167919168663035, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
   spin: {fileID: -5688697478299761995, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
+  dash: {fileID: -6003059062958949704, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
 --- !u!50 &1533975948794841788
 Rigidbody2D:
   serializedVersion: 4
@@ -173,6 +174,9 @@ MonoBehaviour:
   deacceleration: 100
   currentSpeed: 0
   MovementInput: {x: 0, y: 0}
+  dashPower: 30
+  dashTime: 0.5
+  dashCoolDown: 2
 --- !u!114 &1533975948794841785
 MonoBehaviour:
   m_ObjectHideFlags: 0

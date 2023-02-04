@@ -7,12 +7,13 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private InputActionReference movement, attack, pointerPosition, spin;
+    private InputActionReference movement, attack, pointerPosition, spin, dash;
 
     private Vector2 pointerInput, movementInput;
     public Vector2 PointerInput => pointerInput;
     private PlayerMovement playerMovement;
     private WeaponParent weaponParent;
+    public bool toCont=true;
 
     private void Awake()
     {
@@ -23,11 +24,13 @@ public class Player : MonoBehaviour
     {
         attack.action.performed += PerformAttack;
         spin.action.performed += PerformSpin;
+        dash.action.performed += PerformDash;
     }
     private void OnDisable()
     {
         attack.action.performed -= PerformAttack;
         spin.action.performed -= PerformSpin;
+        dash.action.performed -= PerformDash;
     }
     private void PerformAttack(InputAction.CallbackContext obj)
     {
@@ -35,8 +38,17 @@ public class Player : MonoBehaviour
     }
     private void PerformSpin(InputAction.CallbackContext obj)
     {
-        Debug.Log("R aynen");
         weaponParent.Spin();
+    }
+    public void PerformDash(InputAction.CallbackContext obj)
+    {
+        if (toCont)
+        {
+
+        Debug.Log("PerformDash");
+        playerMovement.changeBool();
+        Debug.Log("PerformDash after");
+        }
     }
 
     void Update()
@@ -45,7 +57,7 @@ public class Player : MonoBehaviour
         weaponParent.PointerPosition = pointerInput;
         movementInput = movement.action.ReadValue<Vector2>();
         playerMovement.MovementInput = movementInput;
-        
+
 
 
     }
