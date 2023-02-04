@@ -15,8 +15,17 @@ public class NinjaBoss : MonoBehaviour
     [Header("Normal Attack")]
     public float TimeBetweenShuriken;
 
+    [Header("Quick Attack")]
+    public float TimeBetweenQuickAttack;
+    public int QuickAttackCount;
+
+    [Header("Random Quick Attack")]
+    public float TimeBetweenRandomQuickAttack;
+    public int RandomQuickAttackCount;
+
     [Header("4 Shuriken Attack")]
     public Transform[] shurikenSP;
+
 
 
 
@@ -38,8 +47,8 @@ public class NinjaBoss : MonoBehaviour
 
         if(currentAttackTimer < 0)
         {
-            currentAttackTimer = AttackTimer;
-            StartCoroutine(NormalAttack());
+            currentAttackTimer = 100;
+            StartCoroutine(RandomQuickAttack());
         }
         else
         {
@@ -55,15 +64,15 @@ public class NinjaBoss : MonoBehaviour
         }
         else
         {
-            chooseDir();
+            moveDir = chooseDir();
         }
     }
 
-    private void chooseDir()
+    private Vector3 chooseDir()
     {
         float randomX = Random.Range(MapTopLeft.position.x, MapBotRight.position.x);
         float randomY = Random.Range(MapTopLeft.position.y, MapBotRight.position.y);
-        moveDir = new Vector3(randomX, randomY, 0);
+        return new Vector3(randomX, randomY, 0);
     }
     public IEnumerator NormalAttack()
     {
@@ -72,6 +81,35 @@ public class NinjaBoss : MonoBehaviour
         Instantiate(ShurikenPrefab, transform.position, Quaternion.identity).GetComponent<Shuriken>().GiveSpeed(target.position - transform.position);
         yield return new WaitForSeconds(TimeBetweenShuriken);
         Instantiate(ShurikenPrefab, transform.position, Quaternion.identity).GetComponent<Shuriken>().GiveSpeed(target.position - transform.position);
+
+        currentAttackTimer = AttackTimer;
+    }
+
+    public IEnumerator QuickAttack()
+    {
+        for (int i = 0; i < QuickAttackCount; i++)
+        {
+            //Add voice
+            //Add animation
+            Instantiate(ShurikenPrefab, transform.position, Quaternion.identity).GetComponent<Shuriken>().GiveSpeed(target.position - transform.position);
+            yield return new WaitForSeconds(TimeBetweenQuickAttack);
+        }
+
+        currentAttackTimer = AttackTimer;
+    }
+
+    public IEnumerator RandomQuickAttack()
+    {
+        for (int i = 0; i < RandomQuickAttackCount; i++)
+        {
+            //Add voice
+            //Add animation
+            Instantiate(ShurikenPrefab, transform.position, Quaternion.identity).GetComponent<Shuriken>().GiveSpeed(chooseDir() - transform.position);
+            yield return new WaitForSeconds(TimeBetweenRandomQuickAttack);
+
+        }
+
+        currentAttackTimer = AttackTimer;
     }
 
 }

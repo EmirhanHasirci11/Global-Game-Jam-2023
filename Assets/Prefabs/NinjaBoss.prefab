@@ -103,8 +103,10 @@ MonoBehaviour:
   damage: 20
   speed: 3
   ShurikenPrefab: {fileID: 6155251159489967565, guid: e2884f774987ed14482e6be5f107b0cd, type: 3}
-  AttackTimer: 0
-  TimeBetweenShuriken: 1
+  AttackTimer: 3
+  MapTopLeft: {fileID: 0}
+  MapBotRight: {fileID: 0}
+  TimeBetweenShuriken: 0.5
   shurikenSP: []
 --- !u!114 &7551704584316021166
 MonoBehaviour:

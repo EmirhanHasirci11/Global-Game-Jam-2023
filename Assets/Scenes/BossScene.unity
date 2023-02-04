@@ -207,7 +207,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &128477940
 MonoBehaviour:
@@ -343,7 +343,7 @@ Transform:
   - {fileID: 1670960751}
   - {fileID: 1139243679}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &318002224
 GameObject:
@@ -740,11 +740,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &766973674 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 3962896550571128835, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
-  m_PrefabInstance: {fileID: 3716840487205470696}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &835970092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1044,7 @@ Transform:
   m_Children:
   - {fileID: 1116419763}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &863863542
 MonoBehaviour:
@@ -1088,16 +1083,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1670960751}
     - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
-      propertyPath: AttackTimer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
       propertyPath: MapBotRight
       value: 
       objectReference: {fileID: 1139243679}
     - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
-      propertyPath: TimeBetweenShuriken
-      value: 0.5
+      propertyPath: QuickAttackCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
+      propertyPath: RandomQuickAttackCount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
+      propertyPath: TimeBetweenQuickAttack
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
+      propertyPath: TimeBetweenRandomQuickAttack
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7227210065834607047, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
       propertyPath: m_RootOrder
@@ -1192,7 +1195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponRenderer: {fileID: 2085357026}
   playerObject: {fileID: 863863536}
-  MainHero: {fileID: 0}
   animator: {fileID: 2085357025}
   circleOrigin: {fileID: 575594905}
   playerLocation: {fileID: 0}
@@ -1292,7 +1294,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1378844272
 GameObject:
@@ -1341,7 +1343,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponRenderer: {fileID: 835970096}
   playerObject: {fileID: 1836577775}
-  MainHero: {fileID: 0}
   animator: {fileID: 835970095}
   circleOrigin: {fileID: 318002225}
   playerLocation: {fileID: 0}
@@ -1680,7 +1681,7 @@ Transform:
   m_Children:
   - {fileID: 1378844273}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085357022
 GameObject:
@@ -1899,6 +1900,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 17270278385286628, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 421806624616375075, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -1942,11 +1947,11 @@ PrefabInstance:
     - target: {fileID: 2085176852972866675, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 5536892600750839461}
+      objectReference: {fileID: 0}
     - target: {fileID: 7972288005549147588, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
       propertyPath: rb
       value: 
-      objectReference: {fileID: 766973674}
+      objectReference: {fileID: 0}
     - target: {fileID: 7972288005549147588, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
       propertyPath: speed
       value: 4
@@ -2022,11 +2027,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3099259784983430571, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
---- !u!95 &5536892600750839461 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9169927830041139021, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
-  m_PrefabInstance: {fileID: 3716840487205470696}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6155251160240495457
 PrefabInstance:
   m_ObjectHideFlags: 0
