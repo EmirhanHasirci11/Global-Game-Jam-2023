@@ -340,6 +340,8 @@ Transform:
   - {fileID: 475750329}
   - {fileID: 466415305}
   - {fileID: 1409310081}
+  - {fileID: 1670960751}
+  - {fileID: 1139243679}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1082,8 +1084,20 @@ PrefabInstance:
       value: NinjaBoss
       objectReference: {fileID: 0}
     - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
+      propertyPath: MapTopLeft
+      value: 
+      objectReference: {fileID: 1670960751}
+    - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
       propertyPath: AttackTimer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
+      propertyPath: MapBotRight
+      value: 
+      objectReference: {fileID: 1139243679}
+    - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
+      propertyPath: TimeBetweenShuriken
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7227210065834607047, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
       propertyPath: m_RootOrder
@@ -1184,8 +1198,40 @@ MonoBehaviour:
   playerLocation: {fileID: 0}
   radius: 1.1
   delay: 0.3
+  damage: 0
   attackBlocked: 0
   isEnemy: 0
+--- !u!1 &1139243678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1139243679}
+  m_Layer: 0
+  m_Name: MapBotRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1139243679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139243678}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.417, y: -0.359, z: 0.36225927}
+  m_LocalScale: {x: 0.031192575, y: 0.055398677, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 147003083}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1205765612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,6 +1347,7 @@ MonoBehaviour:
   playerLocation: {fileID: 0}
   radius: 1.1
   delay: 0.3
+  damage: 0
   attackBlocked: 0
   isEnemy: 0
 --- !u!1 &1409310080
@@ -1414,6 +1461,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1670960750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1670960751}
+  m_Layer: 0
+  m_Name: MapTopLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1670960751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670960750}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.42, y: 0.347, z: 0.36225927}
+  m_LocalScale: {x: 0.031192575, y: 0.055398677, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 147003083}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1836577775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,8 +1526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf16ea8baffb2f448a8bd9bcaaf13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 5
-  maxHealth: 5
+  currentHealth: 100
+  maxHealth: 100
   OnHitWithRefference:
     m_PersistentCalls:
       m_Calls: []
@@ -1956,10 +2034,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6155251159489967564, guid: e2884f774987ed14482e6be5f107b0cd, type: 3}
-      propertyPath: m_Mass
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 6155251159489967565, guid: e2884f774987ed14482e6be5f107b0cd, type: 3}
       propertyPath: m_Name
       value: Shuriken
