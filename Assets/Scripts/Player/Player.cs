@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private InputActionReference movement, attack, pointerPosition;
+    private InputActionReference movement, attack, pointerPosition, spin;
 
     private Vector2 pointerInput, movementInput;
     public Vector2 PointerInput => pointerInput;
@@ -22,14 +22,21 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         attack.action.performed += PerformAttack;
+        spin.action.performed += PerformSpin;
     }
     private void OnDisable()
     {
-        attack.action.performed -=PerformAttack;
+        attack.action.performed -= PerformAttack;
+        spin.action.performed -= PerformSpin;
     }
     private void PerformAttack(InputAction.CallbackContext obj)
     {
         weaponParent.Attack();
+    }
+    private void PerformSpin(InputAction.CallbackContext obj)
+    {
+        Debug.Log("R aynen");
+        weaponParent.Spin();
     }
 
     void Update()
@@ -38,10 +45,11 @@ public class Player : MonoBehaviour
         weaponParent.PointerPosition = pointerInput;
         movementInput = movement.action.ReadValue<Vector2>();
         playerMovement.MovementInput = movementInput;
+        
 
 
     }
-    
+
     private Vector2 GetPointerInput()
     {
         Vector3 mousePos = pointerPosition.action.ReadValue<Vector2>();

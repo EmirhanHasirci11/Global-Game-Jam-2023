@@ -22,10 +22,15 @@ public class WeaponParent : MonoBehaviour
     public bool attackBlocked;
     public bool isEnemy;
     public bool IsAttacking { get; private set; }
+    public bool IsSpinn { get; private set; }
 
     public void ResetIsAttacking()
     {
         IsAttacking = false;
+    }
+    public void ResetIsSpin()
+    {
+        IsSpinn = false;
     }
     private void Start()
     {
@@ -39,8 +44,9 @@ public class WeaponParent : MonoBehaviour
 
     private void Update()
     {
-        if (IsAttacking)
+        if (IsAttacking || IsSpinn)
             return;
+
         Vector2 direction;
 
         playerLocation = !MainHeroHealth.isDead ? MainHero.transform : null;
@@ -97,6 +103,15 @@ public class WeaponParent : MonoBehaviour
         attackBlocked = true;
         StartCoroutine(DelayAttack());
     }
+    public void Spin()
+    {
+
+        animator.SetTrigger("Spin");
+        IsSpinn = true;
+        StartCoroutine(DelaySpin());
+
+    }
+
     public void Attack(float delayTime)
     {
         if (attackBlocked)
@@ -107,6 +122,11 @@ public class WeaponParent : MonoBehaviour
         StartCoroutine(DelayAttack(delayTime));
     }
 
+    private IEnumerator DelaySpin()
+    {
+        yield return new WaitForSeconds(2);
+        IsSpinn = false;
+    }
     private IEnumerator DelayAttack()
     {
         yield return new WaitForSeconds(delay);
@@ -115,7 +135,7 @@ public class WeaponParent : MonoBehaviour
     private IEnumerator DelayAttack(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
-        attackBlocked = false;
+        
     }
     private void OnDrawGizmosSelected()
     {
