@@ -13,8 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private float currentSpeed = 0;
     private Vector2 oldMovementInput;
     public Vector2 MovementInput;
-    [SerializeField] private float dashPower ;
-    [SerializeField] private float dashTime ;
+    [SerializeField] private float dashPower;
+    [SerializeField] private float dashTime;
     [SerializeField] private float dashCoolDown;
     public bool controlBool;
     private bool isDashing;
@@ -27,7 +27,18 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         if (isDashing)
-            return;
+        {
+            Physics2D.IgnoreLayerCollision(6, 7, true);
+            Physics2D.IgnoreLayerCollision(6, 9, true);
+            Debug.Log("Aynen");
+        }
+        else
+        {
+            Physics2D.IgnoreLayerCollision(6, 7, false);
+
+            Physics2D.IgnoreLayerCollision(6, 9, false);
+        }
+
         if (MovementInput.magnitude > 0 && currentSpeed >= 0)
         {
             oldMovementInput = MovementInput;
