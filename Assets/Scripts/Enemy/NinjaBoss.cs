@@ -11,6 +11,7 @@ public class NinjaBoss : MonoBehaviour
     public float AttackTimer;
     public Transform MapTopLeft;
     public Transform MapBotRight;
+    public float teleportTimer;
 
     [Header("Normal Attack")]
     public float TimeBetweenShuriken;
@@ -31,29 +32,58 @@ public class NinjaBoss : MonoBehaviour
 
     private Transform target;
     private Rigidbody2D rb;
+    private Health health;
     private float currentAttackTimer;
+    private float currentTeleportTimer;
     private Vector3 moveDir;
+    private bool canMove;
+    private bool isAttacking;
 
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        health = gameObject.GetComponent<Health>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         currentAttackTimer = AttackTimer;
+        currentTeleportTimer = teleportTimer;
+        canMove = true;
     }
 
     private void Update()
     {
         currentAttackTimer -= Time.deltaTime;
+        currentTeleportTimer -= Time.deltaTime;
 
         if(currentAttackTimer < 0)
         {
             currentAttackTimer = 100;
-            StartCoroutine(RandomQuickAttack());
+            if(health.currentHealth > health.maxHealth * 70/100)
+            {
+                StartCoroutine(NormalAttack());
+            }
+            else if(health.currentHealth <= health.maxHealth * 70 / 100 && health.currentHealth >= health.maxHealth * 40 / 100)
+            {
+                AttackTimer = AttackTimer * 3 / 4;
+                StartCoroutine(QuickAttack());
+            }
+            else
+            {
+                AttackTimer = AttackTimer * 3 / 4;
+                StartCoroutine(RandomQuickAttack());
+            }
         }
         else
         {
-            Move();
+            if(currentTeleportTimer < 0 && !isAttacking)
+            {
+                currentTeleportTimer = 100;
+                canMove = false;
+                StartCoroutine(Teleport());
+            }
+            if(canMove)
+                Move();
         }
+
     }
 
     public void Move()
@@ -68,6 +98,23 @@ public class NinjaBoss : MonoBehaviour
         }
     }
 
+    public IEnumerator Teleport()
+    {
+        rb.velocity = Vector3.zero;
+        Vector3 pos = chooseDir();
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<Collider2D>().enabled = false;
+        //Add efects
+        yield return new WaitForSeconds(1);
+        transform.position = pos;
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<Collider2D>().enabled = true;
+
+        currentTeleportTimer = teleportTimer;
+        moveDir = chooseDir();
+        canMove = true;
+
+    }
     private Vector3 chooseDir()
     {
         float randomX = Random.Range(MapTopLeft.position.x, MapBotRight.position.x);
@@ -78,11 +125,13 @@ public class NinjaBoss : MonoBehaviour
     {
         //Add voice
         //Add animation
+        isAttacking = true;
         Instantiate(ShurikenPrefab, transform.position, Quaternion.identity).GetComponent<Shuriken>().GiveSpeed(target.position - transform.position);
         yield return new WaitForSeconds(TimeBetweenShuriken);
         Instantiate(ShurikenPrefab, transform.position, Quaternion.identity).GetComponent<Shuriken>().GiveSpeed(target.position - transform.position);
 
         currentAttackTimer = AttackTimer;
+        isAttacking = false;
     }
 
     public IEnumerator QuickAttack()
@@ -91,10 +140,12 @@ public class NinjaBoss : MonoBehaviour
         {
             //Add voice
             //Add animation
+            isAttacking = true;
             Instantiate(ShurikenPrefab, transform.position, Quaternion.identity).GetComponent<Shuriken>().GiveSpeed(target.position - transform.position);
             yield return new WaitForSeconds(TimeBetweenQuickAttack);
+            
         }
-
+        isAttacking = false;
         currentAttackTimer = AttackTimer;
     }
 
@@ -104,11 +155,13 @@ public class NinjaBoss : MonoBehaviour
         {
             //Add voice
             //Add animation
+            isAttacking = true;
             Instantiate(ShurikenPrefab, transform.position, Quaternion.identity).GetComponent<Shuriken>().GiveSpeed(chooseDir() - transform.position);
             yield return new WaitForSeconds(TimeBetweenRandomQuickAttack);
 
         }
 
+        isAttacking = false;
         currentAttackTimer = AttackTimer;
     }
 
