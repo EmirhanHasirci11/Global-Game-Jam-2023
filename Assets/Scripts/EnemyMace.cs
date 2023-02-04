@@ -6,7 +6,7 @@ public class EnemyMace : Enemy
 {
     [Header("Child Class Attributes")]
     public float AttackTimer;
-    public float MaxDistanceFromPlayer;
+    public float MinAttackDistanceFromPlayer;
     public int AttackTurnCount;
     private WeaponParent weaponParent;
     private float currentAttackTimer;
@@ -35,7 +35,7 @@ public class EnemyMace : Enemy
         if (target == null)
             yield break;
 
-        if ((target.transform.position - transform.position).magnitude <= 2)
+        if ((target.transform.position - transform.position).magnitude <= MinAttackDistanceFromPlayer)
         {
             currentAttackTimer = 100;
             for (int i = 0; i < AttackTurnCount; i++)

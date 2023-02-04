@@ -479,7 +479,7 @@ MonoBehaviour:
   rb: {fileID: 542819142}
   startPos: {x: 0, y: 0, z: 0}
   AttackTimer: 4
-  MaxDistanceFromPlayer: 0
+  MinAttackDistanceFromPlayer: 3
   AttackTurnCount: 3
 --- !u!212 &542819145
 SpriteRenderer:
