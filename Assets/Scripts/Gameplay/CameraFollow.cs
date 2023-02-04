@@ -11,6 +11,8 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        leftEdge = -8.4f;
+        rightEdge = 8.4f;
     }
 
     // Update is called once per frame
@@ -18,16 +20,18 @@ public class CameraFollow : MonoBehaviour
     {
         if(target.position.x > rightEdge)
         {
-
+            GoNextMap(17.8f);
+            rightEdge = transform.position.x + 8.4f;
         }
         else if(target.position.x < leftEdge)
         {
-
+            GoNextMap(-17.8f);
+            leftEdge = transform.position.x - 8.4f;
         }
     }
 
-    private void GoNextMap(Vector3 newPos)
+    private void GoNextMap(float newPos)
     {
-        transform.position += newPos;
+        transform.position += new Vector3(newPos,0,0);
     }
 }
