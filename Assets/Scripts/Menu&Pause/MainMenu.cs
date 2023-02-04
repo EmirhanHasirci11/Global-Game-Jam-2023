@@ -15,17 +15,24 @@ public class MainMenu : MonoBehaviour
     public Slider soundoption;
     public Slider musicoption;
     public Image Dark;
-    public void Play()
+    public void Play(string mode)
     {
-        StartCoroutine(StartCo());
+        StartCoroutine(StartCo(mode));
     }
     
-    IEnumerator StartCo()
+    IEnumerator StartCo(string mode)
     {
         Dark.gameObject.SetActive(true);
         StartCoroutine(FadeIn(Dark,2));
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("SampleScene");
+        if (mode == "endless")
+        {
+            SceneManager.LoadScene("Endless");
+        }
+        else
+        {
+            SceneManager.LoadScene("Level 1");
+        }
     }
     public void Exit()
     {
