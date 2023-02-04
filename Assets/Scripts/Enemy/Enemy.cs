@@ -77,5 +77,6 @@ public class Enemy : MonoBehaviour
     {
         Gizmos.color = new Color32(0, 0, 0, 100);
         Gizmos.DrawSphere(transform.position, PlayerCheckRadius);
+
     }
 }

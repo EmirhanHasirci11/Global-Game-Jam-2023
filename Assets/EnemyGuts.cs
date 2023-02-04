@@ -42,11 +42,7 @@ public class EnemyGuts : Enemy
             currentAttackTimer = 100;
 
             weaponParent.Attack();
-            yield return new WaitForSeconds(weaponParent.animator.GetCurrentAnimatorClipInfo(0).Length);
-            yield return new WaitForSeconds(SwordDownWaitDelay);
-            animator.SetTrigger("SwordUp");
-            yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
-
+            yield return new WaitForSeconds(weaponParent.animator.GetCurrentAnimatorClipInfo(0).Length);           
             currentAttackTimer = AttackTimer;
         }
 

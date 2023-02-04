@@ -571,7 +571,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponRenderer: {fileID: 1845687705}
   playerObject: {fileID: 2023390497}
-  MainHero: {fileID: 0}
   animator: {fileID: 1845687704}
   circleOrigin: {fileID: 1007403331}
   playerLocation: {fileID: 0}
@@ -2308,7 +2307,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponRenderer: {fileID: 572397762}
   playerObject: {fileID: 981449582}
-  MainHero: {fileID: 0}
   animator: {fileID: 572397761}
   circleOrigin: {fileID: 1785058839}
   playerLocation: {fileID: 0}
@@ -4953,6 +4951,10 @@ PrefabInstance:
     - target: {fileID: 8090765631562147654, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
       propertyPath: m_Name
       value: BasicEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090765631562147654, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8090765631562147661, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
       propertyPath: m_RootOrder

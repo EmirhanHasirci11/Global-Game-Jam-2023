@@ -9,7 +9,7 @@ public class WeaponParent : MonoBehaviour
     public SpriteRenderer weaponRenderer;
     private SpriteRenderer characterRenderer;
     public GameObject playerObject;
-    public GameObject MainHero;
+    private GameObject MainHero;
     private Vector3 defaultLocalScale;
     private Health MainHeroHealth;
     public Vector2 PointerPosition { get; set; }
@@ -42,9 +42,9 @@ public class WeaponParent : MonoBehaviour
         if (IsAttacking)
             return;
         Vector2 direction;
-        
-            playerLocation = !MainHeroHealth.isDead? MainHero.transform:null ;
-        if (isEnemy &&playerLocation!=null)
+
+        playerLocation = !MainHeroHealth.isDead ? MainHero.transform : null;
+        if (isEnemy && playerLocation != null)
         {
             direction = ((Vector2)playerLocation.position - (Vector2)transform.position).normalized;
 
@@ -58,8 +58,18 @@ public class WeaponParent : MonoBehaviour
         if (direction.x < 0)
         {
             playerObject.transform.localScale = new Vector3(-defaultLocalScale.x, defaultLocalScale.y, defaultLocalScale.z);
-            scale.y = -1;
-            scale.x = -1;
+            if (playerObject.GetComponent<EnemyGuts>() != null)
+            {
+
+                scale.y = 1;
+                scale.y = 1;
+            }
+            else
+            {
+                scale.x = -1;
+                scale.y = -1;
+
+            }
         }
         else
         {
