@@ -787,7 +787,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8090765631562147651, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
       propertyPath: PlayerCheckRadius
-      value: 4.21
+      value: 7.72
       objectReference: {fileID: 0}
     - target: {fileID: 8090765631562147654, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
       propertyPath: m_Name
@@ -853,7 +853,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8090765631562147651, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
       propertyPath: PlayerCheckRadius
-      value: 4.21
+      value: 7.51
       objectReference: {fileID: 0}
     - target: {fileID: 8090765631562147654, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
       propertyPath: m_Name
@@ -1241,7 +1241,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8090765631562147651, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
       propertyPath: PlayerCheckRadius
-      value: 4.21
+      value: 7.72
       objectReference: {fileID: 0}
     - target: {fileID: 8090765631562147654, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
       propertyPath: m_Name
