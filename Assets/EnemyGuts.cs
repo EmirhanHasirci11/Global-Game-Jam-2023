@@ -13,13 +13,10 @@ public class EnemyGuts : Enemy
     private WeaponParent weaponParent;
     private float currentAttackTimer;
 
-    private void Awake()
+    private void Start()
     {
         weaponParent = GetComponentInChildren<WeaponParent>();
         animator = weaponParent.animator;
-    }
-    private void Start()
-    {
         currentAttackTimer = AttackTimer;
     }
     private void Update()

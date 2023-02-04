@@ -11,13 +11,9 @@ public class EnemyMace : Enemy
     private WeaponParent weaponParent;
     private float currentAttackTimer;
     
-
-    private void Awake()
-    {
-        weaponParent = GetComponentInChildren<WeaponParent>();
-    }
     private void Start()
     {
+        weaponParent = GetComponentInChildren<WeaponParent>();
         currentAttackTimer = AttackTimer;
     }
     private void Update()
