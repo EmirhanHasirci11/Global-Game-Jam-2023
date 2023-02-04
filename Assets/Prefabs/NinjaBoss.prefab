@@ -106,10 +106,13 @@ MonoBehaviour:
   AttackTimer: 3
   MapTopLeft: {fileID: 0}
   MapBotRight: {fileID: 0}
-  teleportTimer: 10
+  teleportTimer: 20
+  MinDistancePhase1: 10
   TimeBetweenShuriken: 0.38
+  quickAttackTimer: 2.2
   TimeBetweenQuickAttack: 0.33
   QuickAttackCount: 22
+  randomQuickAttackTimer: 1.5
   TimeBetweenRandomQuickAttack: 0.3
   RandomQuickAttackCount: 30
   shurikenSP: []

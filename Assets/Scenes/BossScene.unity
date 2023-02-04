@@ -902,18 +902,6 @@ PrefabInstance:
       propertyPath: MapBotRight
       value: 
       objectReference: {fileID: 1139243679}
-    - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
-      propertyPath: quickAttackTimer
-      value: 2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
-      propertyPath: MinDistancePhase1
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681877511709803752, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
-      propertyPath: randomQuickAttackTimer
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7227210065834607047, guid: 311aa7ac70e5dba4a93cc3b581f2ec68, type: 3}
       propertyPath: m_RootOrder
       value: 7
