@@ -6,32 +6,65 @@ public class CameraFollow : MonoBehaviour
 {
     private Transform target;
 
-    private float leftEdge;
-    private float rightEdge;
+    public float leftEdge;
+    public float rightEdge;
+
+    private bool changingScreen;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        leftEdge = -8.4f;
-        rightEdge = 8.4f;
+        leftEdge = -8.9f;
+        rightEdge = 8.9f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(target.position.x > rightEdge)
+        if(target.position.x > rightEdge && !changingScreen)
         {
-            GoNextMap(17.8f);
-            rightEdge = transform.position.x + 8.4f;
+            changingScreen = true;
+            rightEdge = transform.position.x + 17.82f + 8.9f;
+            leftEdge = transform.position.x + 17.82f - 8.9f;
+            target.position += new Vector3(1f, 0, 0);
+            Time.timeScale = 0;
+            Debug.Log("right");
+            StartCoroutine(GoNextMap(17.82f));
         }
-        else if(target.position.x < leftEdge)
+        else if(target.position.x < leftEdge && !changingScreen)
         {
-            GoNextMap(-17.8f);
-            leftEdge = transform.position.x - 8.4f;
+            changingScreen = true;
+            leftEdge = transform.position.x - 17.82f - 8.9f;
+            rightEdge = transform.position.x - 17.82f + 8.9f;
+            target.position += new Vector3(-1f, 0, 0);
+            Time.timeScale = 0;
+            Debug.Log("left");
+            StartCoroutine(GoNextMap(-17.82f));
         }
     }
 
-    private void GoNextMap(float newPos)
+    private IEnumerator GoNextMap(float newPos)
     {
-        transform.position += new Vector3(newPos,0,0);
+        Vector3 newPosition = new Vector3(newPos, 0, 0);
+        Vector3 currentPos = transform.position;
+
+        if(newPos > 0)
+        {
+            while (transform.position.x < (currentPos + newPosition).x)
+            {
+                transform.position += new Vector3(0.09f, 0, 0);
+                yield return new WaitForSecondsRealtime(0.001f);
+            }
+        }
+        else
+        {
+            while (transform.position.x > (currentPos + newPosition).x)
+            {
+                transform.position -= new Vector3(0.09f, 0, 0);
+                yield return new WaitForSecondsRealtime(0.001f);
+            }
+        }
+        changingScreen = false;
+        Time.timeScale = 1;
+        yield break;
     }
 }
