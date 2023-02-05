@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashPower;
     [SerializeField] private float dashTime;
     [SerializeField] private float dashCoolDown;
+    [SerializeField] public Animator animator;
     public bool controlBool;
     private bool isDashing;
     private bool canDash = true;
@@ -31,13 +32,15 @@ public class PlayerMovement : MonoBehaviour
         {
             oldMovementInput = MovementInput;
             currentSpeed += acceleration * maxSpeed * Time.deltaTime;
+
         }
         else
         {
             currentSpeed -= deacceleration * maxSpeed * Time.deltaTime;
         }
+        animator.SetFloat("Speed", currentSpeed);
 
-        if(!isDashing)
+        if (!isDashing)
         {
             currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
             rigidbody.velocity = oldMovementInput * currentSpeed;

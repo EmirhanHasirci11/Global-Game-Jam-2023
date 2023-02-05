@@ -89,7 +89,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 347498269097567664}
   m_LocalRotation: {x: 0, y: 0, z: 0.23344536, w: 0.97236997}
-  m_LocalPosition: {x: 1.71, y: 0.38, z: 0}
+  m_LocalPosition: {x: 2.17, y: 0.38, z: 0}
   m_LocalScale: {x: 1.6340753, y: 1.1588683, z: 65.09043}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -228,7 +228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &347498269556655319
 Transform:
   m_ObjectHideFlags: 0
@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 347498269791938724}
   - component: {fileID: 347498269791938725}
   - component: {fileID: 347498269791938730}
+  - component: {fileID: 8691050934357777847}
   - component: {fileID: 347498269791938731}
   - component: {fileID: 347498269791938728}
   m_Layer: 6
@@ -502,6 +503,7 @@ MonoBehaviour:
   dashPower: 30
   dashTime: 0.1
   dashCoolDown: 1
+  animator: {fileID: 8691050934357777847}
   controlBool: 0
 --- !u!114 &347498269791938730
 MonoBehaviour:
@@ -537,6 +539,26 @@ MonoBehaviour:
       m_Calls: []
   isDead: 0
   gameOverScreen: {fileID: 0}
+--- !u!95 &8691050934357777847
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347498269791938729}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07bb6c117e5acd14db982fcd8fa99ccb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &347498269791938731
 MonoBehaviour:
   m_ObjectHideFlags: 0
