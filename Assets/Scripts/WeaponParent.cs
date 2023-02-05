@@ -70,7 +70,7 @@ public class WeaponParent : MonoBehaviour
         if (direction.x < 0)
         {
             playerObject.transform.localScale = new Vector3(-defaultLocalScale.x, defaultLocalScale.y, defaultLocalScale.z);
-            if (playerObject.GetComponent<EnemyGuts>() != null)
+            if (playerObject.GetComponent<EnemyGuts>() != null || playerObject.GetComponent<EnemyMace>() )
             {
                scale.y = 1;                
             }

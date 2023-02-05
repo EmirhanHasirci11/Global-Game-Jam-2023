@@ -8,7 +8,9 @@ public class Enemy : MonoBehaviour
     public float damage;
     public float speed;
     public float PlayerCheckRadius;
+    public Animator anim;
     public float MinDistanceFromPlayer;
+    public float currentSpeed;
 
     [HideInInspector] public Transform target;
     public Rigidbody2D rb;
@@ -33,7 +35,11 @@ public class Enemy : MonoBehaviour
             else
             {
                 rb.velocity = Vector3.zero;
+
+                currentSpeed = 0;
             }
+            currentSpeed += speed * Time.deltaTime;
+            
 
         }
         else
@@ -41,12 +47,17 @@ public class Enemy : MonoBehaviour
             if ((transform.position - startPos).magnitude > 0.1)
             {
                 rb.velocity = (startPos - transform.position).normalized * speed;
+                currentSpeed += speed * Time.deltaTime;
             }
             else
             {
+
                 rb.velocity = Vector3.zero;
+                currentSpeed = 0;
             }
         }
+        
+        anim.SetFloat("Speed", currentSpeed);
     }
 
 
