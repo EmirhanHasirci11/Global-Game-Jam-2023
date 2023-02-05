@@ -92,6 +92,12 @@ public class WeaponParent : MonoBehaviour
                 {
                     scale.y = 1;
                 }
+                else if (playerObject.GetComponent<EnemySamurai>() != null)
+                {
+
+                    scale.x = 1;
+                    scale.y = 1;
+                }
                 else
                 {
                     scale.x = -1;
@@ -108,7 +114,6 @@ public class WeaponParent : MonoBehaviour
             }
             else
             {
-
                 scale.y = 1;
                 scale.x = 1;
             }
