@@ -36,25 +36,43 @@ public class NinjaBoss : MonoBehaviour
     private Transform target;
     private Rigidbody2D rb;
     private Health health;
+    private GameObject MainHero;
+    private Transform playerLocation;
     private float currentAttackTimer;
     private float currentTeleportTimer;
     private Vector3 moveDir;
+    private Health MainHeroHealth;
     private bool canMove;
     private bool isAttacking;
     private int phase = 0;
-
+    private Vector3 defaultLocalScale;
     private void Awake()
     {
+        MainHero = GameObject.FindGameObjectWithTag("Player");
         rb = gameObject.GetComponent<Rigidbody2D>();
         health = gameObject.GetComponent<Health>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         currentAttackTimer = AttackTimer;
+        MainHeroHealth = MainHero.GetComponent<Health>();
+        defaultLocalScale = transform.localScale;
         currentTeleportTimer = teleportTimer;
         canMove = true;
     }
 
     private void Update()
     {
+        playerLocation = !MainHeroHealth.isDead ? MainHero.transform : null;
+        Vector2 direction;
+        direction = ((Vector2)playerLocation.position - (Vector2)transform.position).normalized;
+        if (direction.x > 0)
+        {
+            gameObject.transform.localScale = new Vector3(-defaultLocalScale.x, defaultLocalScale.y, defaultLocalScale.z);
+        }
+        else
+        {
+            gameObject.transform.localScale = new Vector3(defaultLocalScale.x, defaultLocalScale.y, defaultLocalScale.z);
+
+        }
         currentAttackTimer -= Time.deltaTime;
         currentTeleportTimer -= Time.deltaTime;
 
@@ -65,19 +83,19 @@ public class NinjaBoss : MonoBehaviour
         else
             phase = 2;
 
-        if(currentAttackTimer < 0)
+        if (currentAttackTimer < 0)
         {
             currentAttackTimer = 100;
-            if(phase == 0)
+            if (phase == 0)
             {
                 StartCoroutine(NormalAttack());
             }
-            else if(phase == 1)
+            else if (phase == 1)
             {
                 AttackTimer = quickAttackTimer;
                 StartCoroutine(QuickAttack());
             }
-            else if(phase == 2)
+            else if (phase == 2)
             {
                 AttackTimer = randomQuickAttackTimer;
                 StartCoroutine(RandomQuickAttack());
@@ -85,19 +103,19 @@ public class NinjaBoss : MonoBehaviour
         }
         else
         {
-            if(currentTeleportTimer < 0 && !isAttacking)
+            if (currentTeleportTimer < 0 && !isAttacking)
             {
                 currentTeleportTimer = 100;
                 canMove = false;
                 StartCoroutine(Teleport());
             }
-            if(canMove)
+            if (canMove)
             {
-                if(phase == 0)
+                if (phase == 0)
                     Move();
-                else if(phase == 1)
+                else if (phase == 1)
                 {
-                    if((transform.position - target.position).magnitude > MinDistancePhase1)
+                    if ((transform.position - target.position).magnitude > MinDistancePhase1)
                     {
                         moveDir = target.position;
                         Move();
@@ -111,10 +129,10 @@ public class NinjaBoss : MonoBehaviour
         }
 
     }
-    
+
     public void Move()
     {
-        if((transform.position - moveDir).magnitude > 0.1)
+        if ((transform.position - moveDir).magnitude > 0.1)
         {
             rb.velocity = (moveDir - transform.position).normalized * speed;
         }
@@ -169,7 +187,7 @@ public class NinjaBoss : MonoBehaviour
             isAttacking = true;
             Instantiate(ShurikenPrefab, transform.position, Quaternion.identity).GetComponent<Shuriken>().GiveSpeed(target.position - transform.position);
             yield return new WaitForSeconds(TimeBetweenQuickAttack);
-            
+
         }
         isAttacking = false;
         currentAttackTimer = AttackTimer;
