@@ -6113,6 +6113,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 512891017565401202, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.51503813
+      objectReference: {fileID: 0}
+    - target: {fileID: 512891017565401202, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.8571673
+      objectReference: {fileID: 0}
+    - target: {fileID: 512891017565401202, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -118
+      objectReference: {fileID: 0}
     - target: {fileID: 6496297119470845828, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6161,7 +6173,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicEnemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2315105368260251262, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
 --- !u!1 &2056888266
 GameObject:
