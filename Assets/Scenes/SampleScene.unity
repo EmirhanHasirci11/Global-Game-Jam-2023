@@ -575,6 +575,7 @@ MonoBehaviour:
   circleOrigin: {fileID: 1007403331}
   swordTip: {fileID: 0}
   playerLocation: {fileID: 0}
+  thrustDelay: 0
   radius: 1.1
   radiusOfTip: 0
   delay: 0.3
@@ -1363,8 +1364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf16ea8baffb2f448a8bd9bcaaf13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 20
-  maxHealth: 20
+  currentHealth: 10000
+  maxHealth: 10000
   OnHitWithRefference:
     m_PersistentCalls:
       m_Calls:
@@ -1384,6 +1385,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDead: 0
+  gameOverScreen: {fileID: 0}
 --- !u!50 &699555693
 Rigidbody2D:
   serializedVersion: 4
@@ -2097,6 +2099,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDead: 0
+  gameOverScreen: {fileID: 0}
 --- !u!61 &981449585
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2428,6 +2431,7 @@ MonoBehaviour:
   circleOrigin: {fileID: 1785058839}
   swordTip: {fileID: 0}
   playerLocation: {fileID: 0}
+  thrustDelay: 0
   radius: 1.1
   radiusOfTip: 0
   delay: 0.3
@@ -4933,6 +4937,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDead: 0
+  gameOverScreen: {fileID: 0}
 --- !u!61 &2023390500
 BoxCollider2D:
   m_ObjectHideFlags: 0

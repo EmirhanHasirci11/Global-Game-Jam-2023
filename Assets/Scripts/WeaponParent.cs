@@ -17,6 +17,7 @@ public class WeaponParent : MonoBehaviour
     public Transform circleOrigin;
     public Transform swordTip;
     public Transform playerLocation;
+    [SerializeField] private float thrustDelay;
     public float radius;
     public float radiusOfTip;
     public float delay = 0.1f;
@@ -114,7 +115,7 @@ public class WeaponParent : MonoBehaviour
         animator.SetTrigger("Thrust");
         IsThrust = true;
         thrustBlocked = true;
-        StartCoroutine(DelayThrust(2));
+        StartCoroutine(DelayThrust(thrustDelay));
     }
     public void Spin()
     {
@@ -140,9 +141,9 @@ public class WeaponParent : MonoBehaviour
         yield return new WaitForSeconds(2);
         IsSpinn = false;
     }
-    private IEnumerator DelayThrust(int delayThrust)
+    private IEnumerator DelayThrust(float thrustDelay)
     {
-        yield return new WaitForSeconds(delayThrust);
+        yield return new WaitForSeconds(thrustDelay);
         thrustBlocked = false;
     }
     private IEnumerator DelayAttack()

@@ -213,6 +213,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDead: 0
+  gameOverScreen: {fileID: 0}
 --- !u!114 &1533975948794841784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +325,7 @@ MonoBehaviour:
   circleOrigin: {fileID: 1533975949051428672}
   swordTip: {fileID: 7780150497980391809}
   playerLocation: {fileID: 0}
+  thrustDelay: 1
   radius: 1.19
   radiusOfTip: 0.42
   delay: 0.3
