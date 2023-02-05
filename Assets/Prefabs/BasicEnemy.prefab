@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8096070247094865613}
   - component: {fileID: 574352172611035413}
-  - component: {fileID: 2315105368260251262}
   - component: {fileID: 5181943559871159063}
   m_Layer: 0
   m_Name: Weapon
@@ -88,26 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2315105368260251262
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717073757459521736}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 08c6cf1ca96a1a44c99eb357ad1952ba, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5181943559871159063
 MonoBehaviour:
   m_ObjectHideFlags: 0
