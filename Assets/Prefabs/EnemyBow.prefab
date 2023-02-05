@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponRenderer: {fileID: 8642566506323080017}
-  playerObject: {fileID: 0}
+  playerObject: {fileID: 362562377921163516}
   animator: {fileID: 0}
   circleOrigin: {fileID: 362562377921163511}
   swordTip: {fileID: 0}
