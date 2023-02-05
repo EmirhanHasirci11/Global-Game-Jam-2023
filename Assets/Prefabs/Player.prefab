@@ -436,6 +436,7 @@ MonoBehaviour:
   dash: {fileID: -6003059062958949704, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
   thrust: {fileID: -6109006110558669027, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
   toCont: 1
+  skillcooldown: {fileID: 0}
 --- !u!50 &347498269791938727
 Rigidbody2D:
   serializedVersion: 4
