@@ -83,6 +83,7 @@ public class CameraFollow : MonoBehaviour
     public GameObject[] fires;
     IEnumerator SpawnFire()
     {
+        yield return new WaitForSeconds(2f);
         fires[0].SetActive(true);
         fires[1].SetActive(true);
         yield return new WaitForSeconds(0.7f);
