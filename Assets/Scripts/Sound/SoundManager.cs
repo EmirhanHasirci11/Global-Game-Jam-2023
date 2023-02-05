@@ -21,8 +21,14 @@ public class SoundManager : MonoBehaviour
             sounds[i].source.volume = sounds[i].volume;
             sounds[i].source.pitch = sounds[i].pitch;
             sounds[i].source.loop = sounds[i].loop;
+            if (sounds[i].isMusic)
+            {
+                sounds[i].source.clip = sounds[i].clip[0];
+                sounds[i].source.Play();
+            }
         }
     }
+
     public void PlaySound(string soundname)
     {
         Sound s = null;
