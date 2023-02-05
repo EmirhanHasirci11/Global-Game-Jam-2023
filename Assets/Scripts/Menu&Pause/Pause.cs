@@ -77,13 +77,6 @@ public class Pause : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1;
-        if (scene.name == "endless")
-        {
-            SceneManager.LoadScene("endless");
-        }
-        else
-        {
-            Debug.LogWarning("Can't Find Scene Name");
-        }
+        SceneManager.LoadScene(scene.name);
     }
 }
