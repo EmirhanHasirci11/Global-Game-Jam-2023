@@ -9,6 +9,12 @@ public class Pause : MonoBehaviour
     public GameObject pausescreen;
     public GameObject pausemenu;
     public float musicmultiplier;
+    Scene scene;
+
+    private void Start()
+    {
+        scene = SceneManager.GetActiveScene();
+    }
     void Update()
     {
         if (Input.GetKeyDown("escape"))
@@ -66,5 +72,18 @@ public class Pause : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        if (scene.name == "endless")
+        {
+            SceneManager.LoadScene("endless");
+        }
+        else
+        {
+            Debug.LogWarning("Can't Find Scene Name");
+        }
     }
 }

@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     public UnityEvent<GameObject> OnHitWithRefference, OnDeathWithRefference;
     [SerializeField]
     public bool isDead = false;
+    [SerializeField] GameObject gameOverScreen;
 
     private void Start()
     {
@@ -42,7 +43,13 @@ public class Health : MonoBehaviour
         {
             OnDeathWithRefference?.Invoke(sender);
             isDead = true;
+            if (gameOverScreen!=null)
+            {
+                gameOverScreen.SetActive(true);
+                Time.timeScale = 0;
+            }
             Destroy(gameObject);
         }
     }
+    
 }
