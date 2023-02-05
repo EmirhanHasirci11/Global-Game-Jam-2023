@@ -23,6 +23,7 @@ public class SoundManager : MonoBehaviour
             sounds[i].source.loop = sounds[i].loop;
             if (sounds[i].isMusic)
             {
+                Debug.Log("imepe");
                 sounds[i].source.clip = sounds[i].clip[0];
                 sounds[i].source.Play();
             }

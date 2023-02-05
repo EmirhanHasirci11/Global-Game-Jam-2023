@@ -2727,6 +2727,14 @@ MonoBehaviour:
     loop: 0
     isMusic: 0
     source: {fileID: 0}
+  - clip:
+    - {fileID: 8300000, guid: a9b00d4dc78400d4380e069d028eb9b4, type: 3}
+    name: music
+    volume: 1
+    pitch: 1
+    loop: 1
+    isMusic: 1
+    source: {fileID: 0}
   o: {fileID: 703638756}
   p: {fileID: 703638757}
   musicmultiplier: 0
