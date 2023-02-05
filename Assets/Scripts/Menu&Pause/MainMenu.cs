@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public DialogManager dialogManager;
     public GameObject optionsmenu;
     public GameObject menubuttons;
     public GameObject backbutton;
@@ -19,19 +20,23 @@ public class MainMenu : MonoBehaviour
     {
         StartCoroutine(StartCo(mode));
     }
+
+
     
     IEnumerator StartCo(string mode)
     {
-        Dark.gameObject.SetActive(true);
-        StartCoroutine(FadeIn(Dark,2));
-        yield return new WaitForSeconds(2);
+        
         if (mode == "endless")
         {
+            Dark.gameObject.SetActive(true);
+            StartCoroutine(FadeIn(Dark, 2));
+            yield return new WaitForSeconds(2);
             SceneManager.LoadScene("Endless");
         }
         else
         {
-            SceneManager.LoadScene("Level 1");
+            menubuttons.SetActive(false);
+            dialogManager.GetDialogs(dialogManager.FindPath("first"));
         }
     }
     public void Exit()
