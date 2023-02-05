@@ -15,14 +15,18 @@ public class WeaponParent : MonoBehaviour
     public Vector2 PointerPosition { get; set; }
     public Animator animator;
     public Transform circleOrigin;
+    public Transform swordTip;
     public Transform playerLocation;
     public float radius;
+    public float radiusOfTip;
     public float delay = 0.1f;
     public float damage;
     public bool attackBlocked;
     public bool isEnemy;
+    private bool thrustBlocked;
     public bool IsAttacking { get; private set; }
     public bool IsSpinn { get; private set; }
+    public bool IsThrust { get; private set; }
 
     public void ResetIsAttacking()
     {
@@ -103,6 +107,15 @@ public class WeaponParent : MonoBehaviour
         attackBlocked = true;
         StartCoroutine(DelayAttack());
     }
+    public void Thrust()
+    {
+        if (thrustBlocked)
+            return;
+        animator.SetTrigger("Thrust");
+        IsThrust = true;
+        thrustBlocked = true;
+        StartCoroutine(DelayThrust(2));
+    }
     public void Spin()
     {
 
@@ -127,6 +140,11 @@ public class WeaponParent : MonoBehaviour
         yield return new WaitForSeconds(2);
         IsSpinn = false;
     }
+    private IEnumerator DelayThrust(int delayThrust)
+    {
+        yield return new WaitForSeconds(delayThrust);
+        thrustBlocked = false;
+    }
     private IEnumerator DelayAttack()
     {
         yield return new WaitForSeconds(delay);
@@ -135,22 +153,42 @@ public class WeaponParent : MonoBehaviour
     private IEnumerator DelayAttack(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
-        
+        attackBlocked = false;
+
     }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
         Vector3 position = circleOrigin == null ? Vector3.zero : circleOrigin.position;
         Gizmos.DrawWireSphere(position, radius);
+
+        Gizmos.color = Color.yellow;
+        Vector3 positionOfSwordTip = swordTip == null ? Vector3.zero : swordTip.position;
+        Gizmos.DrawWireSphere(positionOfSwordTip, radiusOfTip);
     }
     public void DetectColliders()
     {
-        foreach (Collider2D item in Physics2D.OverlapCircleAll(circleOrigin.position, radius))
+        if (!IsThrust)
         {
-            Health health;
-            if (health = item.GetComponent<Health>())
+            foreach (Collider2D item in Physics2D.OverlapCircleAll(circleOrigin.position, radius))
             {
-                health.GetHit(damage, transform.parent.gameObject);
+                Health health;
+                if (health = item.GetComponent<Health>())
+                {
+                    health.GetHit(damage, transform.parent.gameObject);
+                }
+            }
+        }
+        else
+        {
+
+            foreach (Collider2D item in Physics2D.OverlapCircleAll(swordTip.position, radiusOfTip))
+            {
+                Health health;
+                if (health = item.GetComponent<Health>())
+                {
+                    health.GetHit(damage, transform.parent.gameObject);
+                }
             }
         }
     }

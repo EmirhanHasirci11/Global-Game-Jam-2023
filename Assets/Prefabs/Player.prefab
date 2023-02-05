@@ -110,6 +110,7 @@ MonoBehaviour:
   pointerPosition: {fileID: 8467167919168663035, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
   spin: {fileID: -5688697478299761995, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
   dash: {fileID: -6003059062958949704, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
+  thrust: {fileID: -6109006110558669027, guid: 6d830a0cba9300f4d95f4fbaa7c744be, type: 3}
   toCont: 1
 --- !u!50 &1533975948794841788
 Rigidbody2D:
@@ -321,8 +322,10 @@ MonoBehaviour:
   playerObject: {fileID: 1533975948794841776}
   animator: {fileID: 1533975949277695110}
   circleOrigin: {fileID: 1533975949051428672}
+  swordTip: {fileID: 7780150497980391809}
   playerLocation: {fileID: 0}
-  radius: 1.1
+  radius: 1.19
+  radiusOfTip: 0.42
   delay: 0.3
   damage: 20
   attackBlocked: 0
@@ -390,6 +393,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1533975949051428672}
+  - {fileID: 7780150497980391809}
   m_Father: {fileID: 1533975948982144485}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -507,6 +511,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &6555014328400527799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7780150497980391809}
+  m_Layer: 0
+  m_Name: CircleSwordTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7780150497980391809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6555014328400527799}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02, y: 5.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1533975949277695128}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8063864049915012678
 GameObject:
   m_ObjectHideFlags: 0
