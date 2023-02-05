@@ -6,10 +6,13 @@ public class CameraFollow : MonoBehaviour
 {
     private Transform target;
 
+    public RoomManager roomManager;
+    public GameObject ninjaBoss;
     public float leftEdge;
     public float rightEdge;
 
     private bool changingScreen;
+    private bool bossActivated = false;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -65,6 +68,11 @@ public class CameraFollow : MonoBehaviour
         }
         changingScreen = false;
         Time.timeScale = 1;
+        if(bossActivated == false && roomManager.currentRoom == roomManager.roomBlocks.Length)
+        {
+            ninjaBoss.SetActive(true);
+            bossActivated = true;
+        }
         yield break;
     }
 }
