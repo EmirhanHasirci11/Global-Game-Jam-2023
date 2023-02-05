@@ -10,6 +10,7 @@ public class EnemyMace : Enemy
     public int AttackTurnCount;
     private WeaponParent weaponParent;
     private float currentAttackTimer;
+    public Sprite[] macesprites;
     
     private void Start()
     {
@@ -37,8 +38,10 @@ public class EnemyMace : Enemy
             for (int i = 0; i < AttackTurnCount; i++)
             {
                 weaponParent.Attack();
+                weaponParent.weaponRenderer.sprite = macesprites[1];
                 yield return new WaitForSeconds(weaponParent.animator.GetCurrentAnimatorClipInfo(0).Length);
             }
+            weaponParent.weaponRenderer.sprite = macesprites[0];
             currentAttackTimer = AttackTimer;
         }
         
