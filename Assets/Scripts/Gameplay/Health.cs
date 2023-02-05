@@ -48,7 +48,10 @@ public class Health : MonoBehaviour
                 gameOverScreen.SetActive(true);
                 Time.timeScale = 0;
             }
-            Destroy(gameObject);
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
     
