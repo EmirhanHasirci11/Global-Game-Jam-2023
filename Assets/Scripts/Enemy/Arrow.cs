@@ -23,6 +23,7 @@ public class Arrow : MonoBehaviour
         if(collision.collider.tag == "Player")
         {
             collision.gameObject.GetComponent<Health>().GetHit(damage, gameObject);
+            kill();
         }
         else if(collision.collider.tag == "Wall")
         {
