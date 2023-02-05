@@ -14,6 +14,8 @@ public class Pause : MonoBehaviour
     private void Start()
     {
         scene = SceneManager.GetActiveScene();
+        PauseGame();
+        Continue();
     }
     void Update()
     {
@@ -21,23 +23,28 @@ public class Pause : MonoBehaviour
         {
             if (Time.timeScale != 0)
             {
-                Time.timeScale = 0;
-                pausescreen.SetActive(true);
-                musicmultiplier = 0.2f;
-                options.s.SetVolume();
-                for (int i = 0; i < options.s.sounds.Length; i++)
-                {
-                    if (options.s.sounds[i].isMusic)
-                    {
-                        options.s.sounds[i].source.Pause();
-                    }
-                }
+                PauseGame();
             }
             else
             {
                 Continue();
             }
 
+        }
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        pausescreen.SetActive(true);
+        musicmultiplier = 0.2f;
+        options.s.SetVolume();
+        for (int i = 0; i < options.s.sounds.Length; i++)
+        {
+            if (options.s.sounds[i].isMusic)
+            {
+                options.s.sounds[i].source.Pause();
+            }
         }
     }
     public void Continue()
