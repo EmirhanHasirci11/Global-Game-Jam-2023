@@ -10023,14 +10023,6 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 347498269791938730, guid: e982ac759026c04468da1156bff15de6, type: 3}
-      propertyPath: maxHealth
-      value: 2500
-      objectReference: {fileID: 0}
-    - target: {fileID: 347498269791938730, guid: e982ac759026c04468da1156bff15de6, type: 3}
-      propertyPath: currentHealth
-      value: 2500
-      objectReference: {fileID: 0}
-    - target: {fileID: 347498269791938730, guid: e982ac759026c04468da1156bff15de6, type: 3}
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 974431270}

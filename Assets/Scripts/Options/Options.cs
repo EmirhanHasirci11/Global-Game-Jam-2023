@@ -21,7 +21,7 @@ public class Options : MonoBehaviour
     {
         OptionsSave save =  optionssave();
         string json = JsonUtility.ToJson(save);
-        StreamWriter sw = new StreamWriter(Application.dataPath + "/JSONdata.text");
+        StreamWriter sw = new StreamWriter(Application.streamingAssetsPath + "/" + "JSONdata.text");
         sw.Write(json);
         sw.Close();
         OptionsLoad();
@@ -30,7 +30,7 @@ public class Options : MonoBehaviour
     {
         OptionsSave save = optionssave();
         string json = JsonUtility.ToJson(save);
-        StreamReader sr = new StreamReader(Application.dataPath + "/JSONdata.text");
+        StreamReader sr = new StreamReader(Application.streamingAssetsPath + "/" + "JSONdata.text");
         json = sr.ReadToEnd();
         sr.Close();
         OptionsSave saved = JsonUtility.FromJson<OptionsSave>(json);

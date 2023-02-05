@@ -14,9 +14,11 @@ public class Pause : MonoBehaviour
     private void Start()
     {
         scene = SceneManager.GetActiveScene();
+
         PauseGame();
         Continue();
     }
+
     void Update()
     {
         if (Input.GetKeyDown("escape"))
