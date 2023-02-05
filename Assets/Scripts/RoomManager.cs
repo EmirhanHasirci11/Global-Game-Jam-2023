@@ -6,9 +6,13 @@ public class RoomManager : MonoBehaviour
 {
     public int currentRoom;
     public float radius;
+    public Health playerHealth;
     public GameObject[] roomBlocks;
 
-
+    private void Start()
+    {
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+    }
     private void FixedUpdate()
     {
         if(AreThereEnemies() == false && currentRoom < roomBlocks.Length)
@@ -18,6 +22,9 @@ public class RoomManager : MonoBehaviour
                 roomBlocks[currentRoom].SetActive(false);
                 transform.position += new Vector3(17.8f, 0, 0);
                 currentRoom++;
+                playerHealth.currentHealth += 15;
+                if (playerHealth.currentHealth > playerHealth.maxHealth)
+                    playerHealth.currentHealth = playerHealth.maxHealth;
             }
             
         }
