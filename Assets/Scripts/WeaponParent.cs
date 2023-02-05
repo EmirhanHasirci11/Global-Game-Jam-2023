@@ -64,6 +64,7 @@ public class WeaponParent : MonoBehaviour
         {
             direction = (PointerPosition - (Vector2)transform.position).normalized;
         }
+
         transform.right = direction;
         Vector2 scale = transform.localScale;
         if (direction.x < 0)
@@ -71,9 +72,7 @@ public class WeaponParent : MonoBehaviour
             playerObject.transform.localScale = new Vector3(-defaultLocalScale.x, defaultLocalScale.y, defaultLocalScale.z);
             if (playerObject.GetComponent<EnemyGuts>() != null)
             {
-
-                scale.y = 1;
-                scale.y = 1;
+               scale.y = 1;                
             }
             else
             {

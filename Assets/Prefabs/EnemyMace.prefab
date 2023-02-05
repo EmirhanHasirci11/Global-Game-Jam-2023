@@ -459,7 +459,7 @@ MonoBehaviour:
   damage: 20
   speed: 3
   PlayerCheckRadius: 7
-  MinDistanceFromPlayer: 1.5
+  MinDistanceFromPlayer: 3
   target: {fileID: 0}
   rb: {fileID: 2174746619401054174}
   startPos: {x: 0, y: 0, z: 0}
@@ -487,6 +487,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDead: 0
+  gameOverScreen: {fileID: 0}
 --- !u!50 &2174746619401054174
 Rigidbody2D:
   serializedVersion: 4
@@ -600,8 +601,11 @@ MonoBehaviour:
   playerObject: {fileID: 2174746619401054172}
   animator: {fileID: 2174746619461001641}
   circleOrigin: {fileID: 2174746620575711459}
+  swordTip: {fileID: 0}
   playerLocation: {fileID: 0}
+  thrustDelay: 0
   radius: 2
+  radiusOfTip: 0
   delay: 0.3
   damage: 20
   attackBlocked: 0
