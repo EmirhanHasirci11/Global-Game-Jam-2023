@@ -916,7 +916,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1354914146}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -928,7 +928,7 @@ MonoBehaviour:
           m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1354914148}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: Menu
         m_Mode: 1
@@ -3531,7 +3531,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1354914146}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -3543,7 +3543,7 @@ MonoBehaviour:
           m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1354914148}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -5569,7 +5569,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1354914146}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 5
@@ -5581,7 +5581,7 @@ MonoBehaviour:
           m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1354914148}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
@@ -8379,7 +8379,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You can make combos with combining these 2 movements
+  m_text: You can combo by combining these 2 movements
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
