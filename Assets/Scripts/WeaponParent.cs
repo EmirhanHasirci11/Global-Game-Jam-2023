@@ -70,22 +70,50 @@ public class WeaponParent : MonoBehaviour
         if (direction.x < 0)
         {
             playerObject.transform.localScale = new Vector3(-defaultLocalScale.x, defaultLocalScale.y, defaultLocalScale.z);
-            if (playerObject.GetComponent<EnemyGuts>() != null || playerObject.GetComponent<EnemyMace>() )
+
+            if (playerObject.GetComponent<EnemySamurai>() != null)
             {
-               scale.y = 1;                
+                transform.localRotation = new Quaternion(transform.localRotation.x, transform.localRotation.y, -295, transform.localRotation.w);
+
+                Debug.Log(gameObject.name);
+
+            }
+            if (playerObject.GetComponent<EnemyBow>() != null)
+            {
+
+                scale.x = 0.352281f;
+                scale.y = 0.352281f;
+
             }
             else
             {
-                scale.x = -1;
-                scale.y = -1;
 
+                if (playerObject.GetComponent<EnemyGuts>() != null || playerObject.GetComponent<EnemyMace>() != null)
+                {
+                    scale.y = 1;
+                }
+                else
+                {
+                    scale.x = -1;
+                    scale.y = -1;
+
+                }
             }
         }
         else
         {
+            if (playerObject.GetComponent<EnemyBow>() != null)
+            {
+
+            }
+            else
+            {
+
+                scale.y = 1;
+                scale.x = 1;
+            }
             playerObject.transform.localScale = new Vector3(defaultLocalScale.x, defaultLocalScale.y, defaultLocalScale.z);
-            scale.y = 1;
-            scale.x = 1;
+
         }
         transform.localScale = scale;
         //Changes orderInLayer for hiding weapon in some angles
