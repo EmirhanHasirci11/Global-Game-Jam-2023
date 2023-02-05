@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
+    GameObject bloodPrefab , blood;
     HealthBar healthbar;
     public float currentHealth, maxHealth;
     public UnityEvent<GameObject> OnHitWithRefference, OnDeathWithRefference;
@@ -15,6 +16,7 @@ public class Health : MonoBehaviour
     private void Start()
     {
         healthbar = gameObject.GetComponent<HealthBar>();
+        bloodPrefab = GameObject.Find("Blood");
     }
     public void InitializeHealth(float healthValue)
     {
@@ -33,6 +35,9 @@ public class Health : MonoBehaviour
         {
             healthbar.Damage(currentHealth, amount, maxHealth);
         }
+        blood = Instantiate(bloodPrefab,transform);
+        blood.transform.localPosition = new Vector2(0, 0);
+        StartCoroutine(BloodDestroy(blood));
         currentHealth -= amount;
 
         if (currentHealth > 0)
@@ -53,6 +58,11 @@ public class Health : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+    IEnumerator BloodDestroy(GameObject blood)
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(blood);
     }
     
 }

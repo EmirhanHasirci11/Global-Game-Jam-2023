@@ -14,11 +14,6 @@ public class Options : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(OptionsDelay());
-    }
-    IEnumerator OptionsDelay()
-    {
-        yield return new YieldInstruction();
         OptionsLoad();
     }
 
