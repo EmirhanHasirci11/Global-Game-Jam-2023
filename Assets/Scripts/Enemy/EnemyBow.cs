@@ -43,17 +43,7 @@ public class EnemyBow : Enemy
             currentAttackTimer = AttackTimer;
             Attack();
         }
-        if(target != null)
-        {
-            if ((target.position - transform.position).magnitude > MinDistanceFromPlayer)
-            {
-                Move();
-            }
-            else
-            {
-                MoveBack();
-            }
-        }
+        Move();
         
         
     }
