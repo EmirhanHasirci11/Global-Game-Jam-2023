@@ -2695,8 +2695,8 @@ GameObject:
   m_Component:
   - component: {fileID: 703638758}
   - component: {fileID: 703638757}
-  - component: {fileID: 703638756}
   - component: {fileID: 703638755}
+  - component: {fileID: 703638756}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -2737,7 +2737,7 @@ MonoBehaviour:
     source: {fileID: 0}
   o: {fileID: 703638756}
   p: {fileID: 703638757}
-  musicmultiplier: 0
+  musicmultiplier: 1
 --- !u!114 &703638756
 MonoBehaviour:
   m_ObjectHideFlags: 0

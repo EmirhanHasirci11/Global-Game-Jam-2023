@@ -13,7 +13,7 @@ public class SoundManager : MonoBehaviour
     public Pause p;
     public float musicmultiplier;
 
-    private void Awake()
+    private void Start()
     {
         for (int i = 0; i < sounds.Length; i++)
         {
