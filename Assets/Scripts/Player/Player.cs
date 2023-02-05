@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     private PlayerMovement playerMovement;
     private WeaponParent weaponParent;
     public bool toCont = true;
+    public Image skillcooldown;
 
     private void Awake()
     {
@@ -52,7 +54,9 @@ public class Player : MonoBehaviour
         {
 
             Debug.Log("PerformDash");
+            skillcooldown.fillAmount = 1;
             playerMovement.changeBool();
+            StartCoroutine(SkillFill(1,skillcooldown));
             Debug.Log("PerformDash after");
         }
     }
@@ -73,5 +77,17 @@ public class Player : MonoBehaviour
         Vector3 mousePos = pointerPosition.action.ReadValue<Vector2>();
         mousePos.z = Camera.main.nearClipPlane;
         return Camera.main.ScreenToWorldPoint(mousePos);
+    }
+
+    IEnumerator SkillFill(float time,Image skill)
+    {
+        float elapsedTime = 0.0f;
+        while (elapsedTime < time)
+        {
+            yield return new YieldInstruction();
+            elapsedTime += Time.unscaledDeltaTime;
+            skill.fillAmount = 1-Mathf.Clamp01(elapsedTime / time);
+        }
+        skillcooldown.fillAmount = 0;
     }
 }
