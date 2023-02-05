@@ -71,7 +71,7 @@ public class EnemyBow : Enemy
         GameObject sp = Instantiate(arrow, transform.position, Quaternion.identity);
         sp.GetComponent<Rigidbody2D>().velocity = (target.position - transform.position).normalized * arrowSpeed;
         Vector3 vectorToTarget = target.position - transform.position;
-        float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90;
+        float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 180;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         sp.transform.rotation = Quaternion.Slerp(transform.rotation, q, 1000);
 
