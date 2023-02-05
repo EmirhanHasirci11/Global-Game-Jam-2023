@@ -312,7 +312,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 2
+  m_PointLightOuterRadius: 1.29
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -357,7 +357,7 @@ Transform:
   m_GameObject: {fileID: 347498269791938729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.739, y: 1.06, z: 0}
-  m_LocalScale: {x: 0.6495598, y: 0.6495598, z: 0.6495598}
+  m_LocalScale: {x: 0.34303254, y: 0.34303254, z: 0.34303254}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 347498270282110013}
@@ -672,8 +672,8 @@ MonoBehaviour:
   swordTip: {fileID: 347498268703094367}
   playerLocation: {fileID: 0}
   thrustDelay: 1
-  radius: 1.19
-  radiusOfTip: 0.42
+  radius: 0.77
+  radiusOfTip: 0.27
   delay: 0.3
   damage: 20
   attackBlocked: 0

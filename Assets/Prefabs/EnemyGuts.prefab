@@ -229,7 +229,7 @@ MonoBehaviour:
   swordTip: {fileID: 0}
   playerLocation: {fileID: 0}
   thrustDelay: 0
-  radius: 1.64
+  radius: 1.19
   radiusOfTip: 0
   delay: 0.3
   damage: 30
@@ -329,7 +329,7 @@ Transform:
   m_GameObject: {fileID: 3753046849239804147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.0637, y: -0.3763, z: 0}
-  m_LocalScale: {x: 0.6334713, y: 0.6334713, z: 1.2780284}
+  m_LocalScale: {x: 0.43342108, y: 0.43342108, z: 0.874427}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3753046848950276376}

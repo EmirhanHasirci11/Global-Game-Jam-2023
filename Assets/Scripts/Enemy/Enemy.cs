@@ -57,7 +57,8 @@ public class Enemy : MonoBehaviour
             }
         }
         
-        anim.SetFloat("Speed", currentSpeed);
+        if(anim != null)
+            anim.SetFloat("Speed", currentSpeed);
     }
 
 
