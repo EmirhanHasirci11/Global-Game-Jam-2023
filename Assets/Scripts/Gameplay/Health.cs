@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
+    SoundManager s;
     GameObject bloodPrefab , blood;
     HealthBar healthbar;
     public float currentHealth, maxHealth;
@@ -15,6 +16,7 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
+        s = GameObject.Find("Scripts").GetComponent<SoundManager>();
         healthbar = gameObject.GetComponent<HealthBar>();
         bloodPrefab = GameObject.Find("Blood");
     }
@@ -38,6 +40,7 @@ public class Health : MonoBehaviour
         blood = Instantiate(bloodPrefab,transform);
         blood.transform.localPosition = new Vector2(0, 0);
         StartCoroutine(BloodDestroy(blood));
+        s.PlaySound("hit");
         currentHealth -= amount;
 
         if (currentHealth > 0)
