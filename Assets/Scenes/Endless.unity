@@ -4543,6 +4543,7 @@ MonoBehaviour:
   - {fileID: 8090765631562147654, guid: 2ad80af41e15d2c4c8a450486ab27e28, type: 3}
   - {fileID: 2174746619401054172, guid: 2cb37fcc57849c34eb71ae255d02b0b9, type: 3}
   - {fileID: 3753046849239804147, guid: 4276266785d991d4a88c5bef1b787a2d, type: 3}
+  - {fileID: 362562377921163516, guid: b0a7440d1b26aad408f56c95499db664, type: 3}
   radius: 17.77
   waitText: {fileID: 865092718}
   waveText: {fileID: 386084630}
