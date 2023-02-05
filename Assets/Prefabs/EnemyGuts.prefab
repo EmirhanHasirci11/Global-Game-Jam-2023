@@ -287,7 +287,7 @@ Animator:
   m_GameObject: {fileID: 3753046848950276377}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d15957a8d3830d94f8e20bc81ca916ae, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4a5eb7614f30a184790ffbeca743df05, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -404,7 +404,7 @@ MonoBehaviour:
   damage: 50
   speed: 4
   PlayerCheckRadius: 8
-  anim: {fileID: 0}
+  anim: {fileID: 3753046849239804146}
   MinDistanceFromPlayer: 3
   currentSpeed: 0
   target: {fileID: 0}
