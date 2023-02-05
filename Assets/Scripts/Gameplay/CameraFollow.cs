@@ -23,6 +23,10 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(ninjaBoss == null)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
         if(target.position.x > rightEdge && !changingScreen)
         {
             changingScreen = true;
