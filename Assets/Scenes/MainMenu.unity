@@ -353,7 +353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 477, y: -40}
+  m_AnchoredPosition: {x: 605, y: -102}
   m_SizeDelta: {x: 333.28, y: 373.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &201312634
@@ -379,8 +379,8 @@ MonoBehaviour:
   m_text: "Character Artist:\nEmre Aslan \xD6zt\xFCrk - Aceien\r\n\nBackground Artist:\nHazal
     Vural - kniocra\r\n\n\n\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c7d160d6fdd49124096007f49f228326, type: 2}
+  m_sharedMaterial: {fileID: -136272554768716122, guid: c7d160d6fdd49124096007f49f228326, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1868,7 +1868,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 201312633}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1898,8 +1898,8 @@ MonoBehaviour:
   m_text: "Programming:\nEren Mert \xD6zen - Citris\nEmirhan Has\u0131rc\u0131 -
     Honoso\n\n         UI&Programming:\nDeniz Vural - PixelShell\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c7d160d6fdd49124096007f49f228326, type: 2}
+  m_sharedMaterial: {fileID: -136272554768716122, guid: c7d160d6fdd49124096007f49f228326, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
