@@ -70,9 +70,22 @@ public class CameraFollow : MonoBehaviour
         Time.timeScale = 1;
         if(bossActivated == false && roomManager.currentRoom == roomManager.roomBlocks.Length)
         {
+            StartCoroutine(SpawnFire());
             ninjaBoss.SetActive(true);
             bossActivated = true;
         }
         yield break;
+    }
+    public GameObject[] fires;
+    IEnumerator SpawnFire()
+    {
+        fires[0].SetActive(true);
+        fires[1].SetActive(true);
+        yield return new WaitForSeconds(0.7f);
+        fires[2].SetActive(true);
+        fires[3].SetActive(true);
+        yield return new WaitForSeconds(0.7f);
+        fires[4].SetActive(true);
+        fires[5].SetActive(true);
     }
 }

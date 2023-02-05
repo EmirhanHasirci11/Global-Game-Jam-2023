@@ -4491,6 +4491,13 @@ MonoBehaviour:
   ninjaBoss: {fileID: 1481052231}
   leftEdge: 0
   rightEdge: 0
+  fires:
+  - {fileID: 320046363}
+  - {fileID: 1253407253}
+  - {fileID: 2123621284}
+  - {fileID: 618720080}
+  - {fileID: 1586745788}
+  - {fileID: 642111237}
 --- !u!1 &947929850
 GameObject:
   m_ObjectHideFlags: 0
@@ -10999,6 +11006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentRoom: 0
   radius: 17.77
+  playerHealth: {fileID: 0}
   roomBlocks:
   - {fileID: 267541197}
   - {fileID: 484858204}
