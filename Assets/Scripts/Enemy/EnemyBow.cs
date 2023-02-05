@@ -6,18 +6,36 @@ public class EnemyBow : Enemy
 {
     [Header("Child Class Attributes")]
     public float AttackTimer;
+    private Transform playerLocation;
     public float MaxDistanceFromPlayer;
     public GameObject arrow;
     public float arrowSpeed;
-
+    private GameObject MainHero;
+    private Health MainHeroHealth;
+    private Vector3 defaultLocalScale;
     private float currentAttackTimer;
 
     private void Start()
     {
+        MainHero = GameObject.FindGameObjectWithTag("Player");
+        MainHeroHealth = MainHero.GetComponent<Health>();
+        defaultLocalScale = transform.localScale;
         currentAttackTimer = AttackTimer;
     }
     private void Update()
     {
+        playerLocation = !MainHeroHealth.isDead ? MainHero.transform : null;
+        Vector2 direction;
+        direction = ((Vector2)playerLocation.position - (Vector2)transform.position).normalized;
+        if (direction.x < 0)
+        {
+            gameObject.transform.localScale = new Vector3(-defaultLocalScale.x, defaultLocalScale.y, defaultLocalScale.z);
+        }
+        else
+        {
+            gameObject.transform.localScale = new Vector3(defaultLocalScale.x, defaultLocalScale.y, defaultLocalScale.z);
+
+        }
         currentAttackTimer -= Time.deltaTime;
         CheckForPlayer();
         if(currentAttackTimer < 0 && target != null)

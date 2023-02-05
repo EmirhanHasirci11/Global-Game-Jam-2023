@@ -35,7 +35,7 @@ Transform:
   m_LocalScale: {x: 0.4407099, y: 0.4407099, z: 0.22035494}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8960386379669653523}
+  - {fileID: 360730217937287445}
   - {fileID: 1648779131834540033}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -334,107 +334,6 @@ MonoBehaviour:
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &4131705345968120475
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8960386379669653523}
-  - component: {fileID: 2669516917593992894}
-  - component: {fileID: 1874308900048012416}
-  m_Layer: 7
-  m_Name: WeaponParent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8960386379669653523
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4131705345968120475}
-  m_LocalRotation: {x: -0, y: -0, z: -0.8571673, w: 0.51503813}
-  m_LocalPosition: {x: 0.002077972, y: 2.6351686, z: 0}
-  m_LocalScale: {x: 0.35228103, y: 0.35228103, z: 2.8429277}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 360730217937287445}
-  m_Father: {fileID: 362562377921163511}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -118}
---- !u!114 &2669516917593992894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4131705345968120475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9dce27a7ae96ee4aa2ce6b522768e9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponRenderer: {fileID: 8642566506323080017}
-  playerObject: {fileID: 362562377921163516}
-  animator: {fileID: 0}
-  circleOrigin: {fileID: 362562377921163511}
-  swordTip: {fileID: 0}
-  playerLocation: {fileID: 0}
-  thrustDelay: 0
-  radius: 1.19
-  radiusOfTip: 0
-  delay: 0.3
-  damage: 30
-  attackBlocked: 0
-  isEnemy: 0
---- !u!114 &1874308900048012416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4131705345968120475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98ca4fe0f8fb99c439d271778e0562cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnAnimationEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2669516917593992894}
-        m_TargetAssemblyTypeName: WeaponParent, Assembly-CSharp
-        m_MethodName: ResetIsAttacking
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnAttackPerformed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2669516917593992894}
-        m_TargetAssemblyTypeName: WeaponParent, Assembly-CSharp
-        m_MethodName: DetectColliders
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &6214494259640257753
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,12 +359,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6214494259640257753}
-  m_LocalRotation: {x: 0, y: 0, z: 0.96615136, w: 0.25797603}
-  m_LocalPosition: {x: 4.34, y: 5.1, z: 0}
-  m_LocalScale: {x: 2.24, y: 1.76, z: 30}
+  m_LocalRotation: {x: -0, y: -0, z: 0.27647617, w: 0.9610208}
+  m_LocalPosition: {x: 0.8706363, y: 0.44176185, z: 0}
+  m_LocalScale: {x: 0.7891099, y: 0.62001485, z: 85.28786}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8960386379669653523}
+  m_Father: {fileID: 362562377921163511}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 150.1}
 --- !u!212 &8642566506323080017
@@ -535,7 +434,7 @@ MonoBehaviour:
   OnAnimationEventTriggered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2669516917593992894}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: WeaponParent, Assembly-CSharp
         m_MethodName: ResetIsAttacking
         m_Mode: 1
@@ -550,7 +449,7 @@ MonoBehaviour:
   OnAttackPerformed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2669516917593992894}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: WeaponParent, Assembly-CSharp
         m_MethodName: DetectColliders
         m_Mode: 1
